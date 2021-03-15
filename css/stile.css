@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #383232;
+}
+/*-------------------------------- HEADER --------------------------------*/
+#header{
+  background-color: #383232;
+  height: auto;
+}
+#header h1{
+  color: #f3efe8;
+  font-size: 3em;
+  padding: 0.25em;
+  font-style: italic;
+}
+.btn-menu{
+  display: none;
+}
+/*-------------------------------- BREADCRUMB --------------------------------*/
+#breadcrumb{
+  background-color: #383232;
+  color: #f3efe8;
+  font-size: 2em;
+  padding: 0.25em;
+}
+/*-------------------------------- NAV BAR --------------------------------*/
+#navbar{
+  background-color: #404040;
+  color: white;
+}
+#navbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#navbar li a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+}
+#navbar li{
+  display: inline-block;
+  padding:15px;
+}
+#navbar li a:hover{
+  background-color: #737373;
+}
+.pagCorrente{
+  color: white;
+  font-size: 1.5em;
+}
+/*-------------------------------- CONTENUTO --------------------------------*/
+#content{
+  margin-top: 0;
+}
+#content p{
+  font-size: 1.45em;
+  background-color: #f3efe8;
+  margin: 0;
+  padding: 0.7em;
+  line-height: 1.3em;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+#content h1, h2{
+  background-color: #f3efe8;
+  margin: 0;
+  padding: 1em;
+  padding-right: 25%;
+  padding-left: 25%;
+}
+/*-------------------------------- FOOTER --------------------------------*/
+footer{
+  background-color: #383232;
+  height: auto;
+}
+footer p{
+  color: #f3efe8;
+  font-size: 1.3em;
+  padding: 0.5em;
+  text-align: center;
+  line-height: 2em;
+}
+.linkFooter{
+  color: cyan;
+}
