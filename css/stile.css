@@ -49,7 +49,7 @@ body{
 #navbar li a:hover{
   background-color: #737373;
 }
-.pagCorrente{
+#navbar .pagCorrente{
   color: white;
   font-size: 1.5em;
 }
@@ -72,6 +72,38 @@ body{
   padding: 1em;
   padding-right: 25%;
   padding-left: 25%;
+}
+
+/*--------------------------- CHI SIAMO ---------------------------------*/
+
+#content .hide {
+  text-indent:100%;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+#content .flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#content .flex-container .flex-img {
+  width: 25%;
+  padding: 10px;
+}
+
+#content .flex-container .flex-txt {
+  width: 70%;
+  padding: 10px;
+}
+
+.img-samuele {
+  background-image: url(https://i.pinimg.com/originals/25/44/b8/2544b80209ba517c9bda4ebf5a5f920c.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /*-------------------------------- FOOTER --------------------------------*/
 #footer{
