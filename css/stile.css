@@ -57,11 +57,11 @@ body{
 #content{
   margin-top: 0;
   background-color: #f3efe8;
+  padding: 0.7em;
 }
 #content p{
   font-size: 1.45em;
   margin: 0;
-  padding: 0.7em;
   line-height: 1.3em;
   padding-left: 25%;
   padding-right: 25%;
