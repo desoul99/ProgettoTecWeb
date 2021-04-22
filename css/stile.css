@@ -44,13 +44,16 @@ body{
 }
 #navbar li{
   display: inline-block;
-  padding:15px;
-}
-#navbar li a:hover{
+  padding:10px;
+  margin:5px;
+  border-radius: 10px;
+  }
+#navbar li:hover{
   background-color: #737373;
 }
 #navbar .pagCorrente{
-  color: white;
+  background-color: #f3efe8;
+  color: #1f1f1f;
   font-size: 1.5em;
 }
 /*-------------------------------- CONTENUTO --------------------------------*/
@@ -65,6 +68,8 @@ body{
   line-height: 1.3em;
   padding-left: 25%;
   padding-right: 25%;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 #content h1, h2{
   background-color: #f3efe8;
@@ -73,7 +78,6 @@ body{
   padding-right: 25%;
   padding-left: 25%;
 }
-
 /*--------------------------- CHI SIAMO ---------------------------------*/
 
 #content .hide {
@@ -159,6 +163,36 @@ input[type=submit]:hover {
   padding: 0.6em 0.5em 0.5em 0.5em ;
 }
 
+/*-------------------------------- TABELLA --------------------------------*/
+.table{
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 1.45em;
+  min-width: 400px;
+  background-color: #f3efe8;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+.table caption{
+  padding-top: 0.5em;
+}
+.table thead tr, .table caption{
+  background-color: #383232;
+  color: #f3efe8;
+  text-align: center;
+  font-size: 1.1em;
+}
+.table th, .table td{
+  padding: 12px 15px;
+}
+.table tbody tr{
+  border-bottom: 1px solid #383232;
+}
+.table tbody tr:nth-last-of-type(even){
+  background-color: #F3EDDD;
+}
 /*-------------------------------- FOOTER --------------------------------*/
 
 #footer{
