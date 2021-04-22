@@ -44,13 +44,16 @@ body{
 }
 #navbar li{
   display: inline-block;
-  padding:15px;
-}
-#navbar li a:hover{
+  padding:10px;
+  margin:5px;
+  border-radius: 10px;
+  }
+#navbar li:hover{
   background-color: #737373;
 }
 #navbar .pagCorrente{
-  color: white;
+  background-color: #f3efe8;
+  color: #1f1f1f;
   font-size: 1.5em;
 }
 /*-------------------------------- CONTENUTO --------------------------------*/
