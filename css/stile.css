@@ -229,6 +229,7 @@ input[type="submit"]:hover {
   flex-wrap: wrap;
   padding-right: 5%;
   padding-left: 5%;
+  justify-content: space-between;
   gap: 0.5em;
 }
 
@@ -236,8 +237,8 @@ input[type="submit"]:hover {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  width: 25em;
-  flex-grow: 1;
+  max-width: 25em;
+  flex-grow: 2;
 }
 
 .recensioni-image {
