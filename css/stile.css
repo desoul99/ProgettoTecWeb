@@ -56,6 +56,11 @@ body {
   color: #1f1f1f;
   font-size: 1.5em;
 }
+#navbar .pagCorrente a{
+  color: #1f1f1f;
+  font-size: 1em;
+} 
+
 @media only screen and (max-width: 480px) {
   #navbar li {
     width: 100%;
@@ -157,7 +162,7 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type="submit"] {
+.contatti input[type="submit"] {
   width: 100%;
   background-color: #93b66b;
   padding: 0.75em;
@@ -166,10 +171,31 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
-input[type="submit"]:hover {
+.contatti input[type="submit"]:hover {
   background-color: #64be69;
 }
 .contatti .input {
+  padding: 0.6em 0.5em 0.5em 0.5em;
+}
+/*-------------------------------- LOGIN --------------------------------*/
+
+.login fieldset {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  width: 20%;
+  margin: auto;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+.login label {
+  text-align: center;
+  margin-left: 0.75em;
+}
+.login input[type="text"], input[type="password"]{
+  border: 1px solid #383232;
+}
+
+.login .input {
   padding: 0.6em 0.5em 0.5em 0.5em;
 }
 

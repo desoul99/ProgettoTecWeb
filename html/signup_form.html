@@ -1,0 +1,18 @@
+<form method="post" class="signup" action="signup.php">
+    <fieldset>
+        <legend>Registrazione nuovo recensore</legend>
+        <div class="input">
+            <label for="username">Username:</label>
+            <input id="username" type="text" value="username" name="username" />
+        </div>
+        <div class="input">
+            <label for="password">Password:</label>
+            <input id="password" type="password" value="password" name="password" />
+        </div>
+        <div class="input">
+            <label for="signup">Registrati</label>
+            <input id="signup" name="signup" type="submit" value="Registrati" />
+        </div>
+        <input type="hidden" value="{{currentPage}}" name="previousPage" />
+    </fieldset>
+</form>

@@ -3,24 +3,27 @@ require_once('utils.php');
 require_once('navbar.php');
 require_once('session.php');
 
+
 $template = file_get_contents('../html/template.html');
-$pageContent = file_get_contents('../html/home.html');
 
 if(!checkLogin()){
-    $loginSection = Utils::bind_to_template(array('currentPage' => 'home.php'), file_get_contents('../html/login_form.html'));
-    $navBar = navbar('Home');
+    $loginSection = Utils::bind_to_template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/login_form.html'));
+    $navBar = navbar('Dashboard');
 }else{
     $loginSection = '';
-    $navBar = navbar('Home', false, true);
+    $navBar = navbar('Dashboard', false, true);
 }
 
+$pageContent = Utils::bind_to_template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/signup_form.html'));
+
+
 $replacements = array(
-    'pageTitle' => 'Orient Review',
+    'pageTitle' => 'Dashboard - Orient Review',
     'metaTitle' => 'Placeholder',
     'metaDescription' => 'Placeholder',
     'metaKeywords' => 'Placeholder',
     'metaAuthors' => 'Placeholder',
-    'breadcrumb' => '<span xml:lang="en">Home</span>',
+    'breadcrumb' => 'Dashboard',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
     'login' => $loginSection
