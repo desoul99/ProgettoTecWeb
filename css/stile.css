@@ -1,10 +1,18 @@
 * {
   margin: 0;
-  padding: 0;
 }
 body {
   background-color: #383232;
 }
+
+@media only screen and (max-width: 1024px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  
+}
+
 /*-------------------------------- HEADER --------------------------------*/
 #header {
   background-color: #383232;
@@ -19,6 +27,15 @@ body {
 .btn-menu {
   display: none;
 }
+
+@media only screen and (max-width: 1024px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  
+}
+
 /*-------------------------------- BREADCRUMB --------------------------------*/
 #breadcrumb {
   background-color: #383232;
@@ -26,39 +43,81 @@ body {
   font-size: 2em;
   padding: 0.25em;
 }
+
+@media only screen and (max-width: 1024px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  
+}
+
 /*-------------------------------- NAV BAR --------------------------------*/
 #navbar {
   background-color: #404040;
   color: white;
 }
-#navbar ul {
+#nav_menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-#navbar li a {
+.nav_link {
   text-decoration: none;
   color: white;
   font-size: 1.5em;
 }
-#navbar li {
+.nav_list {
   display: inline-block;
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
 }
-#navbar li:hover {
+.nav_list:hover {
   background-color: #737373;
 }
-#navbar .pagCorrente {
+#nav_menu .pagCorrente {
   background-color: #f3efe8;
   color: #1f1f1f;
   font-size: 1.5em;
 }
+
+@media only screen and (max-width: 1024px) {
+  
+}
+
 @media only screen and (max-width: 480px) {
-  #navbar li {
-    width: 100%;
+  #navbar {
+    position: relative;
+  }
+
+  #nav_menu{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+  }
+
+  .nav_list {
+    display: block;
+    padding: 0%;
+    margin: 0%;
+    border-radius: 0px;
+  }
+
+  .nav_link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    width: auto;
+    display:block;
+    text-align:center;
+    margin:0.5em;
+  }
+
+  #nav_menu .pagCorrente {
+    padding:0.5em;
   }
 }
 
@@ -67,13 +126,13 @@ body {
   margin-top: 0;
   background-color: #f3efe8;
   padding: 0.7em;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 #content p {
   font-size: 1.45em;
   margin: 0;
   line-height: 1.3em;
-  padding-left: 25%;
-  padding-right: 25%;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
@@ -82,11 +141,41 @@ h2 {
   background-color: #f3efe8;
   margin: 0;
   padding: 1em;
-  padding-right: 25%;
-  padding-left: 25%;
 }
-/*--------------------------- CHI SIAMO ---------------------------------*/
 
+@media only screen and (max-width: 1400px) {
+  #content {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  #content {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #content {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #content {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  
+}
+
+/*--------------------------- CHI SIAMO ---------------------------------*/
 #content .hide {
   text-indent: 100%;
   white-space: nowrap;
@@ -96,37 +185,84 @@ h2 {
 #content .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  padding-left: 25%;
-  padding-right: 25%;
+  margin-top: 0.5em;
 }
-
 #content .flex-container .flex-img {
   width: 25%;
   padding: 10px;
-}
-
-#content .flex-container .flex-txt {
-  width: 70%;
-  padding: 10px;
-}
-
-.img-samuele {
-  background-image: url(https://i.pinimg.com/originals/25/44/b8/2544b80209ba517c9bda4ebf5a5f920c.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  margin: 0%;
+}
+#content .flex-container .flex-txt {
+  width: 70%;
+  margin: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#content .flex-container .mobile {
+  visibility: hidden;
+  padding: 0%;
+  width: 0%;
+  height: 0%;
+}
+
+.group-member{
+  padding:0%;
+  margin: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0em;
+}
+
+.img-samuele {
+  background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
+}
+
+@media only screen and (max-width: 1024px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  #content .flex-container {
+    flex-direction: column;
+  }
+
+  #content .flex-container .flex-img{
+    width: auto;
+    background-size:contain;
+    padding-top: 100%;
+  }
+
+  #content .flex-container .flex-txt{
+    width: auto;
+  }
+
+  #content .flex-container .desk{
+    visibility: hidden;
+    padding-top: 0%;
+    padding: 0%;
+    margin: 0% ;
+  }
+
+  #content .flex-container .mobile{
+    visibility: visible;
+  }
+
 }
 
 /*--------------------------- CONTATTI ---------------------------------*/
 .contatti ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   padding-top: 0.75em;
 }
 .contatti li {
   font-size: 1.35em;
   margin: 0;
   line-height: 1.3em;
-  padding-left: 25%;
-  padding-right: 25%;
 }
 .contatti legend {
   margin: auto;
@@ -139,7 +275,6 @@ form {
 .contatti fieldset {
   padding-top: 0.3em;
   padding-bottom: 0.3em;
-  width: 60%;
   margin: auto;
   font-size: 1.1em;
   border-radius: 5px;
@@ -171,6 +306,14 @@ input[type="submit"]:hover {
 }
 .contatti .input {
   padding: 0.6em 0.5em 0.5em 0.5em;
+}
+
+@media only screen and (max-width: 1024px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  
 }
 
 /*-------------------------------- TABELLA --------------------------------*/
@@ -205,6 +348,18 @@ input[type="submit"]:hover {
 .table tbody tr:nth-last-of-type(even) {
   background-color: #f3eddd;
 }
+
+@media only screen and (max-width: 1024px) {
+  .table th,
+  .table td {
+    padding: 6px 7px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  
+}
+
 /*-------------------------------- FOOTER --------------------------------*/
 
 #footer {
@@ -222,14 +377,75 @@ input[type="submit"]:hover {
   color: cyan;
 }
 
+@media only screen and (max-width: 1024px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  
+}
+
 /*-------------------------------- RECENSIONI --------------------------------*/
 
-#recensioni-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding-right: 5%;
-  padding-left: 5%;
-  gap: 0.5em;
+#recensioni{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+#recensioni .flex-container {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#recensioni .flex-container p {
+  word-wrap: break-word;
+}
+
+#recensioni .flex-container .hide{
+  text-indent: 150%;
+}
+
+#recensioni h1{
+  padding:0%;
+  margin: 0.3em;
+}
+
+#recensioni h2{
+  padding:0%;
+  margin: 0em;
+  text-indent: 0.3em;
+}
+
+.img-onepiece {
+  background-image: url("../images/onepiece.jpg");
+}
+
+.img-onepiece {
+  background-image: url("../images/onepiece.jpg");
+}
+
+.img-detectiveconan {
+  background-image: url("../images/detectiveconan.jpg");
+}
+
+.img-fullmetalalchemist {
+  background-image: url("../images/fullmetalalchemist.jpg");
+}
+
+.img-gintama {
+  background-image: url("../images/gintama.jpg");
+}
+
+.img-hunterxhunter {
+  background-image: url("../images/hunterxhunter.jpg");
+}
+
+.img-steinsgate {
+  background-image: url("../images/steinsgate.jpg");
+}
+
+.img-berserk {
+  background-image: url("../images/berserk.jpg");
 }
 
 .recensioni-item {
@@ -258,14 +474,28 @@ input[type="submit"]:hover {
   word-wrap: break-word;
 }
 
+@media only screen and (max-width: 1024px) {
+  
+}
+
 @media only screen and (max-width: 480px) {
-  .recensioni-item {
+  #recensioni .flex-container {
     flex-wrap: wrap;
     flex-direction: column;
-    border-bottom: 1px groove #737373;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
   }
-  #recensioni-container {
-    padding: 0;
+  #recensioni .flex-container .flex-img{
+    padding: 0%;
+    padding-top: 100%;
+    width: 100%;
+    
+  }
+
+  #recensioni .flex-container .flex-txt{
+    padding: 0%;
+    width: 100%;
   }
 }
 
