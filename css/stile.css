@@ -59,7 +59,7 @@ body {
 #navbar .pagCorrente a{
   color: #1f1f1f;
   font-size: 1em;
-} 
+}
 
 @media only screen and (max-width: 480px) {
   #navbar li {
@@ -230,6 +230,36 @@ textarea {
 }
 .table tbody tr:nth-last-of-type(even) {
   background-color: #f3eddd;
+}
+@media only screen and (max-width: 800px){
+  .table thead{
+    display: none;
+  }
+  .table, .table tbody, .table tr, .table td{
+    display: block;
+    width: 100%;
+  }
+  .table tr{
+    margin-bottom: 15px;
+  }
+  .table td{
+    text-align: right;
+    /*padding-left: 50%;*/
+    text-align: right;
+    position: relative;
+  }
+  .table td::before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 30%;
+    /*padding-left: 15%;*/
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .table caption{
+    display: none;
+  }
 }
 /*-------------------------------- FOOTER --------------------------------*/
 
