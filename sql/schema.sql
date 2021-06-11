@@ -2,208 +2,61 @@ create database if not exists Orient_DB;
 
 use Orient_DB;
 
-DROP table if exists Franchise;
-CREATE TABLE Franchise
-(
- Franchise          varchar(128) NOT NULL,
- Titolo_alternativo varchar(128) NULL,
-
-PRIMARY KEY (Franchise)
-);
-
-
-DROP table if exists Immagini;
-CREATE TABLE Immagini
-(
- id          int NOT NULL,
- nome        varchar(32) NOT NULL,
- link        varchar(64) NOT NULL,
- descrizione varchar(512) NOT NULL,
-
-PRIMARY KEY (id)
-);
-
-
-DROP table if exists Utenti;
-CREATE TABLE Utenti
+DROP table if exists Recensori;
+CREATE TABLE Recensori
 (
  username         varchar(32) NOT NULL,
- bio              varchar(512) NOT NULL,
- email            varchar(32) NOT NULL,
- immagine_profilo int NOT NULL,
+ password         varchar(256) NOT NULL,
 
-PRIMARY KEY (username),
-CONSTRAINT FOREIGN KEY (immagine_profilo) 
-	REFERENCES immagini(id)
+PRIMARY KEY (username)
 );
-
-
-DROP table if exists Credenziali;
-CREATE TABLE Credenziali
-(
- username varchar(32) NOT NULL,
- password varchar(256) NOT NULL,
-
-PRIMARY KEY (username),
-CONSTRAINT FOREIGN KEY (username) 
-	REFERENCES Utenti(username)
-);
-
-
-DROP table if exists Ruoli;
-CREATE TABLE Ruoli
-(
- username varchar(32) NOT NULL,
- ruolo    char NOT NULL,
-
-PRIMARY KEY (username),
-CONSTRAINT FOREIGN KEY (username) 
-	REFERENCES Utenti(username)
-);
-
 
 DROP table if exists Recensioni;
 CREATE TABLE Recensioni
 (
- id_recensione int NOT NULL,
- autore        varchar(32) NOT NULL,
- titolo        varchar(128) NOT NULL,
- testo         varchar(4096) NOT NULL,
- tags          varchar(256) NULL,
+ nome_recensione  varchar(32) NOT NULL,
+ autore           varchar(32) NOT NULL,
+ autore_opera      varchar(32) NOT NULL,
+ titolo           varchar(128) NOT NULL,
+ titolo_inglese    boolean NOT NULL,
+ testo            varchar(4096) NOT NULL,
+ tipo             varchar(16) NOT NULL,
+ tags             varchar(256) NULL,
+ alt_immagine     varchar(64) NOT NULL,
+ immagine         varchar(32) NOT NULL,
+ voto             int NOT NULL,
 
-PRIMARY KEY (id_recensione),
+PRIMARY KEY (nome_recensione),
 CONSTRAINT FOREIGN KEY (autore) 
-	REFERENCES Utenti(username)
+	REFERENCES Recensori(username)
 );
 
-
-DROP table if exists Gallery;
-CREATE TABLE Gallery
+DROP table if exists Uscite;
+CREATE TABLE Uscite
 (
- id_immagine   int NOT NULL,
- id_recensione int NOT NULL,
- ordine        int NOT NULL,
+ titolo           varchar(128) NOT NULL,
+ prezzo           varchar(128) NOT NULL,
+ distributore     varchar(32) NOT NULL,
+ data_uscita      date       NOT NULL,
 
-PRIMARY KEY (id_immagine, id_recensione),
-CONSTRAINT FOREIGN KEY (id_recensione) 
-	REFERENCES immagini(id),
-CONSTRAINT FOREIGN KEY (id_immagine) 
-	REFERENCES Recensioni(id_recensione)
+PRIMARY KEY (titolo, data_uscita)
 );
-
-
-DROP table if exists AudioVisivi;
-CREATE TABLE AudioVisivi
-(
- Titolo             varchar(128) NOT NULL,
- Franchise          varchar(128) NOT NULL,
- id_recensione      int NOT NULL,
- titolo_alternativo varchar(128) NULL,
- anno               year NOT NULL,
- tipo_media         varchar(16) NOT NULL,
- studio             varchar(128) NULL,
- stagione           varchar(64) NULL,
-
-PRIMARY KEY (Titolo, Franchise),
-FOREIGN KEY (id_recensione) 
-	REFERENCES Recensioni(id_recensione),
-FOREIGN KEY (Franchise) 
-	REFERENCES Franchise(Franchise)
-);
-
-
-DROP table if exists Cartacei;
-CREATE TABLE Cartacei
-(
- titolo             varchar(128) NOT NULL,
- Franchise          varchar(128) NOT NULL,
- id_recensione      int NOT NULL,
- titolo_alternativo varchar(128) NULL,
- anno               year NOT NULL,
- tipo_media         varchar(16) NOT NULL,
- autore             varchar(128) NULL,
- editore            varchar(128) NULL,
-
-PRIMARY KEY (titolo, Franchise),
-CONSTRAINT FOREIGN KEY (id_recensione) 
-	REFERENCES Recensioni(id_recensione),
-CONSTRAINT FOREIGN KEY (Franchise) 
-	REFERENCES Franchise(Franchise)
-);
-
-
-DROP table if exists Videogiochi;
-CREATE TABLE Videogiochi
-(
- Titolo             varchar(128) NOT NULL,
- Franchise          varchar(128) NOT NULL,
- id_recensione      int NOT NULL,
- titolo_alternativo varchar(128) NULL,
- anno               year NOT NULL,
- sviluppatore       varchar(128) NULL,
- distributore       varchar(128) NULL,
- genere             varchar(128) NULL,
- piattaforma        varchar(128) NULL,
-
-PRIMARY KEY (Titolo, Franchise),
-CONSTRAINT FOREIGN KEY (id_recensione) 
-	REFERENCES Recensioni(id_recensione),
-CONSTRAINT FOREIGN KEY (Franchise) 
-	REFERENCES Franchise(Franchise)
-);
-
-
-DROP table if exists Uscite_audiovisivi;
-CREATE TABLE Uscite_audiovisivi
-(
- Titolo    varchar(128) NOT NULL,
- Franchise varchar(128) NOT NULL,
- Episodio   varchar(32) NOT NULL,
- data_uscita date       NOT NULL,
-
-PRIMARY KEY (Titolo, Franchise, Episodio),
-CONSTRAINT FOREIGN KEY (Titolo, Franchise) 
-	REFERENCES AudioVisivi(Titolo, Franchise)
-);
-
-
-DROP table if exists Uscite_cartacei;
-CREATE TABLE Uscite_cartacei
-(
- titolo    varchar(128) NOT NULL,
- data_uscita date       NOT NULL,
- Franchise varchar(128) NOT NULL,
- volume     varchar(64) NOT NULL,
-
-PRIMARY KEY (titolo, Franchise, volume),
-CONSTRAINT FOREIGN KEY (titolo, Franchise) 
-	REFERENCES Cartacei(titolo, Franchise)
-);
-
-
-DROP table if exists Uscite_videogiochi;
-CREATE TABLE Uscite_videogiochi
-(
- titolo    varchar(128) NOT NULL,
- franchise varchar(128) NOT NULL,
- data      date NOT NULL,
-
-PRIMARY KEY (titolo, franchise),
-CONSTRAINT FOREIGN KEY (titolo, franchise) 
-	REFERENCES Videogiochi(Titolo, Franchise)
-);
-
 
 DROP table if exists Contatto;
 CREATE TABLE Contatto
 (
- email      	varchar(32) NOT NULL,
- data       	datetime NOT NULL,
- oggetto    	varchar(64) NOT NULL,
- testo      	varchar(1024) NOT NULL,
- incaricato 	varchar(32) NULL,
+ nome             varchar(128) NOT NULL,
+ email         	  varchar(32) NOT NULL,
+ data             datetime NOT NULL,
+ oggetto          varchar(64) NOT NULL,
+ testo            varchar(1024) NOT NULL,
 
-PRIMARY KEY (email, data),
-CONSTRAINT FOREIGN KEY (incaricato) 
-	REFERENCES Utenti(username)
+PRIMARY KEY (email, data)
 );
+
+
+INSERT INTO `recensori` (`username`, `password`) VALUES
+('admin', '$2y$10$Dull8DHmnoX3jyDiG6qwQefXMNMNQSPC0PRfD8lFixLaEenjch8mW');
+
+INSERT INTO `recensioni` (`nome_recensione`, `autore`, `autore_opera`, `titolo`, `titolo_inglese`, `testo`, `tipo`, `tags`, `alt_immagine`, `immagine`, `voto`) VALUES
+('onepiece', 'admin', 'Eiichiro Oda', 'One Piece', 1, 'Monkey D. Rufy è un giovane pirata sognatore che da piccolo ha involontariamente mangiato il frutto del diavolo Gom Gom, diventando così un uomo di gomma con la capacità di allungarsi e deformarsi a piacimento. Con l\'obiettivo di diventare il Re dei pirati e di ritrovare il leggendario tesoro One Piece, Rufy si mette in mare e riunisce intorno a sé una ciurma.\r\nHo sempre visionato <span xml:lang=\"en\">One Piece</span> saltuariamente sin dalla sua prima messa in onda in tv per mancanza di tempo e perché credevo fosse troppo demenziale, ma mi sono dovuta ricredere: ho avuto modo di conoscere questa serie per intero solo tra l\'ottobre e il gennaio scorsi (tanto mi ci è voluto per vedere i primi 487 episodi della serie), e i personaggi, secondo me tutti ben caratterizzati e numerosi, così come la freschezza della storia, mi avevano già colpito parecchi anni fa, ma solo ora posso dire con sicurezza che <span xml:lang=\"en\">One Piece</span> è per me uno dei migliori shounen in circolazione, secondo me persino superiore a Naruto, che apprezzo moltissimo.\r\nUna colonna sonora di tutto rispetto, da poema sinfonico, fa da sfondo perfetto alle avventure appassionanti di un manipolo di giovani pirati ai quali è impossibile non affezionarsi, umani, carismatici e credibili come sono.', 'Anime', 'pirati combattimenti Mare oceano Corruzione protagonista-coraggioso protagonista-ricercato Protagonista-determinato protagonista-orfano Superpoteri Protagonista-stupido ', 'Placeholder', 'onepiece', 4);
