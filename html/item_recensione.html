@@ -1,9 +1,10 @@
-<li class="recensioni-item"><a href="recensione.php?nome={{nomeRecensione}}"><span class="assistive-text">Accedi alla
-            recensione completa di {{titoloRecensione}}</span><img class="recensioni-image"
-            src="../images/{{nomeRecensione}}.jpg" alt="{{altImmagine}}" /></a>
-    <div class="recensioni-content">
+<li>
+    <div class="flex-container">
+        <a href="recensione.php?nome={{nomeRecensione}}" class="flex-img"><span class="hide">Accedi alla
+            recensione completa di {{titoloRecensione}}</span><img src="../images/{{nomeRecensione}}.jpg" alt="{{altImmagine}}" /></a>
+    <div class="flex-txt">
         <h1>{{titoloRecensione}}</h1>
-        <h5>{{nomeAutore}}</h5>
+        <h2>{{nomeAutore}}</h2>
         <p>{{votoRecensione}}</p>
         <p>{{testoRecensione}}...</p>
     </div>

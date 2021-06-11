@@ -27,6 +27,7 @@ if($listaRecensioni){
     $recensioni = '';
     foreach($listaRecensioni as $singleRecensione){
         $singleRecensione['testoRecensione'] = substr($singleRecensione['testoRecensione'], 0, 120);
+        $singleRecensione['titoloRecensione'] = $singleRecensione['titoloInglese'] ? '<span xml:lang="en">'.$singleRecensione['titoloRecensione'].'</span>' : $singleRecensione['titoloRecensione'];
         $recensioni .= Utils::bind_to_template($singleRecensione, $templateRecensione);
     }
     $pageContent = Utils::bind_to_template(array('recensioni' => $recensioni), $pageContent);
