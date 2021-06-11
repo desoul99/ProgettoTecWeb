@@ -345,3 +345,7 @@ textarea {
   overflow: hidden;
   top: -10px;
 }
+/*-------------------------------- RECENSIONI --------------------------------*/
+.erroriJS{
+  color: red;
+}
