@@ -26,7 +26,9 @@ $replacements = array(
     'breadcrumb' => 'Dashboard',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '',
+    'bodyOptions' => ''
 );
 
 

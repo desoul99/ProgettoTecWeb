@@ -23,7 +23,9 @@ $replacements = array(
     'breadcrumb' => '<span xml:lang="en">Home</span>',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '',
+    'bodyOptions' => ''
 );
 
 

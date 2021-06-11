@@ -47,7 +47,9 @@ $replacements = array(
     'breadcrumb' => 'Recensioni > '.$wrappedTitle,
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '',
+    'bodyOptions' => ''
 );
 
 

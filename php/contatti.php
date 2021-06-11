@@ -25,7 +25,9 @@ $replacements = array(
     'breadcrumb' => 'Contatti',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '<script type="text/javascript" src="../js/controllo.js"></script>',
+    'bodyOptions' => ' onload="caricamento();"'
 );
 
 

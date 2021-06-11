@@ -23,7 +23,9 @@ $replacements = array(
     'breadcrumb' => 'Calendario uscite',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '',
+    'bodyOptions' => ''
 );
 
 

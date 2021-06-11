@@ -24,7 +24,9 @@ $replacements = array(
     'breadcrumb' => 'Chi siamo',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '',
+    'bodyOptions' => ''
 );
 
 

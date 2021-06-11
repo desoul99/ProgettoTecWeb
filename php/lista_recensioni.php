@@ -40,11 +40,13 @@ $replacements = array(
     'metaTitle' => 'Placeholder',
     'metaDescription' => 'Placeholder',
     'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder'     ,
+    'metaAuthors' => 'Placeholder',
     'breadcrumb' => 'Recensioni',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
-    'login' => $loginSection
+    'login' => $loginSection,
+    'scripts' => '',
+    'bodyOptions' => ''
 );
 
 
