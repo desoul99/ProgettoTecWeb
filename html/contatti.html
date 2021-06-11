@@ -14,27 +14,28 @@
         </li>
     </ul>
 </div>
-<form class="contatti">
+<form class="contatti" method="post" action="nuovoContatto.php">
     <fieldset>
         <legend>Inviaci un messaggio</legend>
         <div class="input">
             <label for="nome">Nome(obbligatorio):</label>
-            <input id="nome" type="text" value="" name="nome" aria-required="true" />
+            <input id="nome" type="text" value="" name="nome" />
         </div>
         <div class="input">
             <label for="mail">Email(obbligatoria):</label>
-            <input id="mail" type="email" value="" name="mail" aria-required="true" />
+            <input id="mail" type="text" value="" name="mail" />
         </div>
         <div class="input">
             <label for="oggetto">Oggetto(obbligatorio):</label>
-            <input id="oggetto" type="text" value="" name="oggetto" aria-required="true" />
+            <input id="oggetto" type="text" value="" name="oggetto" />
         </div>
         <div class="input">
             <label for="messaggio">Messaggio(obbligatorio):</label>
-            <textarea id="messaggio" name="messaggio" rows="4" cols="50" aria-required="true"></textarea>
+            <textarea id="messaggio" name="messaggio" rows="4" cols="50"></textarea>
         </div>
         <div class="input">
-            <input id="submit" type="submit" value="Invia" aria-label="Invia" />
+            <label for="submit">Invia:</label>
+            <input id="submit" type="submit" value="Invia" />
         </div>
     </fieldset>
 </form>
