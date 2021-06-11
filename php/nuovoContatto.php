@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
     $dbAcces = new DBAccess();
     $openDBConnection = $dbAcces->openDBConnection();
 
-    $risultato = $dbAcces->inserirciProtagonista($nome, $mail, $oggetto, $messaggio);
+    $risultato = $dbAcces->inserisciContatto($nome, $mail, $oggetto, $messaggio);
     if($risultato == true){//inserimento ok
       $flag = TRUE;
     }

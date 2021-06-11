@@ -41,7 +41,7 @@ class DBAccess{
       }else{
         $query = sprintf("SELECT * FROM recensioni WHERE nome_recensione = '%s'", mysqli_real_escape_string($this->connection, $nome));
       }
-      
+
       $queryResult = mysqli_query($this->connection, $query);
 
       if(mysqli_num_rows($queryResult) == 0){
@@ -70,6 +70,19 @@ class DBAccess{
   }
   public function closeDBConnection(){
     mysqli_close($this->connection);
+  }
+  public function inserisciContatto($nome, $mail, $oggetto, $messaggio){
+    $this->date = date('Y-m-d H:i:s');
+    $query_insert = "INSERT INTO contatto(email, data, oggetto, testo, nome) VALUES (\"$mail\", \"$this->date\", \"$oggetto\", \"$messaggio\", \"$nome\")";
+
+    $queryResult = mysqli_query($this->connection, $query_insert);
+
+    if ($queryResult){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }
 ?>
