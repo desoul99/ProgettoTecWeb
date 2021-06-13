@@ -7,14 +7,16 @@ require_once('session.php');
 $template = file_get_contents('../html/template.html');
 
 if(!checkLogin()){
-    $loginSection = Utils::bind_to_template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/login_form.html'));
-    $navBar = navbar('Dashboard');
+    header('Location: home.php');
+    die();
 }else{
     $loginSection = '';
     $navBar = navbar('Dashboard', false, true);
 }
 
-$pageContent = Utils::bind_to_template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/signup_form.html'));
+
+
+$pageContent = Utils::template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/signup_form.html'));
 
 
 $replacements = array(
@@ -32,5 +34,5 @@ $replacements = array(
 );
 
 
-echo Utils::bind_to_template($replacements, $template);
+echo Utils::template($replacements, $template);
 ?>

@@ -13,7 +13,7 @@ if(!isset($_GET['nome'])){
 }
 
 if(!checkLogin()){
-    $loginSection = Utils::bind_to_template(array('currentPage' =>  $_SERVER['REQUEST_URI']), file_get_contents('../html/login_form.html'));
+    $loginSection = Utils::template(array('currentPage' =>  $_SERVER['REQUEST_URI']), file_get_contents('../html/login_form.html'));
     $navBar = navbar('Recensioni', true);
 }else{
     $loginSection = '';
@@ -32,10 +32,10 @@ $wrappedTitle = '';
 if(!$recensione){
     $pageContent = "La recensione richiesta non è presente nel sistema.";
 }else{
-    $nonWrappedTitle = $recensione[0]['titoloRecensione'];
-    $wrappedTitle = $recensione[0]['titoloInglese'] ? '<span xml:lang="en">'.$recensione[0]['titoloRecensione'].'</span>' : $recensione[0]['titoloRecensione'];
-    $recensione[0]['titoloRecensione'] = $wrappedTitle;
-    $pageContent = Utils::bind_to_template($recensione[0], $pageContent);
+    $nonWrappedTitle = $recensione[0]['titolo'];
+    $wrappedTitle = $recensione[0]['titolo_inglese'] ? '<span xml:lang="en">'.$recensione[0]['titolo'].'</span>' : $recensione[0]['titolo'];
+    $recensione[0]['titolo_recensione'] = $wrappedTitle;
+    $pageContent = Utils::template($recensione[0], $pageContent);
 }
 
 $replacements = array(
@@ -53,5 +53,5 @@ $replacements = array(
 );
 
 
-echo Utils::bind_to_template($replacements, $template);
+echo Utils::template($replacements, $template);
 ?>

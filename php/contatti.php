@@ -8,7 +8,7 @@ $template = file_get_contents('../html/template.html');
 $pageContent = file_get_contents('../html/contatti.html');
 
 if(!checkLogin()){
-    $loginSection = Utils::bind_to_template(array('currentPage' => 'contatti.php'),file_get_contents('../html/login_form.html'));
+    $loginSection = Utils::template(array('currentPage' => 'contatti.php'),file_get_contents('../html/login_form.html'));
     $navBar = navbar('Contatti');
 }else{
     $loginSection = '';
@@ -31,5 +31,5 @@ $replacements = array(
 );
 
 
-echo Utils::bind_to_template($replacements, $template);
+echo Utils::template($replacements, $template);
 ?>

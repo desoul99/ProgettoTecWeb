@@ -27,6 +27,6 @@ function navbar($currentPage, $clickable = false, $recensore = false){
         $pageList['recensore'] = '<li class="nav_list"><a class="nav_link" xml:lang="en" href="dashboard.php">Dashboard</a></li>';
         $pageList['recensore'] .= '<li class="nav_list"><a class="nav_link" xml:lang="en" href="logout.php">Logout</a></li>';
     }
-    return Utils::bind_to_template($pageList, $navbar);
+    return Utils::template($pageList, $navbar);
 }
 ?>
