@@ -1,4 +1,5 @@
 <?php  //pagina raggiunta dall'utente
+require_once('utils.php');
 $paginaHTML = file_get_contents('..' . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR .'contatti.html');//importo HTML con form
 $paginaHTMLConferma = file_get_contents('..' . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR .'corretto.html');//importo HTML con form
 require_once __DIR__ . DIRECTORY_SEPARATOR . "dbConnection.php";
@@ -10,20 +11,12 @@ $messaggio = '';
 
 $flag = FALSE;
 
-function cleanInput($value){
-  //elimino spazi
-  $value = trim($value);
-  //rimuovo tag html
-  $value = strip_tags($value);
-  return $value;
-}
-
 if(isset($_POST['submit'])){
 
-  $nome = cleanInput($_POST['nome']);
-  $mail = cleanInput($_POST['mail']);
-  $oggetto = cleanInput($_POST['oggetto']);
-  $messaggio = cleanInput($_POST['messaggio']);
+  $nome = Utils::cleanInput($_POST['nome']);
+  $mail = Utils::cleanInput($_POST['mail']);
+  $oggetto = Utils::cleanInput($_POST['oggetto']);
+  $messaggio = Utils::cleanInput($_POST['messaggio']);
   $controlMailFirst = explode("@", $mail);
   $controlMailSecond = explode(".", $controlMailFirst[1]);
   //controlli

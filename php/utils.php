@@ -1,12 +1,20 @@
 <?php
 
 class Utils{
-    #https://www.labnol.org/code/19266-php-templates
-    public static function bind_to_template($replacements, $template){
+    public static function template($replace, $template){
         return preg_replace_callback('/{{(.+?)}}/m',
-            function($matches) use ($replacements) {
-                return $replacements[$matches[1]];
+            function($match) use ($replace) {
+                return $replace[$match[1]];
         },$template);
+    }
+    public static function cleanInput($value, $stripTags = true){
+        //elimino spazi
+        $value = trim($value);
+        //rimuovo tag html
+        if($stripTags){
+            $value = strip_tags($value);
+        }
+        return $value;
     }
 }
 ?>

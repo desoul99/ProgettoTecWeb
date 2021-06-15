@@ -18,11 +18,7 @@ class DBAccess{
 
   public function signUp($username, $password){
     $query = sprintf("INSERT INTO recensori VALUES ('%s', '%s')", mysqli_real_escape_string($this->connection, $username), mysqli_real_escape_string($this->connection, $password));
-    if(mysqli_query($this->connection, $query)){
-      return true;
-    }else{
-      return false;
-    }
+    return mysqli_query($this->connection, $query);
   }
 
   public function getUser($username){
@@ -33,6 +29,21 @@ class DBAccess{
     }else{
       return mysqli_fetch_assoc($queryResult);
     }
+  }
+
+  public function getRecensori(){
+    $query = sprintf("SELECT username FROM recensori");
+    $queryResult = mysqli_query($this->connection, $query);
+    if(mysqli_num_rows($queryResult) == 0){
+      return null;
+    }else{
+      return mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
+    }
+  }
+
+  public function removeRecensione($nome){
+    $query = sprintf("DELETE FROM recensioni WHERE nome_recensione = '%s'", mysqli_real_escape_string($this->connection, $nome));
+    return mysqli_query($this->connection, $query);
   }
 
   public function getRecensione($nome = null){
@@ -47,27 +58,31 @@ class DBAccess{
       if(mysqli_num_rows($queryResult) == 0){
         return null;
       }else{
-        $listaRecensioni = array();
-        while($row = mysqli_fetch_assoc($queryResult)){
-
-          $singleRecensione = array(
-            "nomeRecensione" => $row['nome_recensione'],
-            "titoloRecensione" => $row['titolo'],
-            "titoloInglese" => $row['titolo_inglese'],
-            "altImmagine" => $row['alt_immagine'],
-            "nomeAutore" => $row['autore_opera'],
-            "autoreRecensione" => $row['autore'],
-            "votoRecensione" => $row['voto'],
-            "testoRecensione" => $row['testo'],
-            "tagRecensione" => $row['tags'],
-            "tipoRecensione" => $row['tipo'],
-          );
-
-          array_push($listaRecensioni, $singleRecensione);
-        }
-        return $listaRecensioni;
+        return mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
       }
   }
+  public function addEditRecensione($nome_recensione, $autore, $autore_opera, $titolo, $titolo_inglese, $testo, $tipo, $tags, $alt_immagine, $immagine, $voto, $old_nome_recensione = null, $update_image = false){
+    $nome_recensione = mysqli_real_escape_string($this->connection, $nome_recensione);
+    $autore = mysqli_real_escape_string($this->connection, $autore);
+    $titolo = mysqli_real_escape_string($this->connection, $titolo);
+    $titolo_inglese = mysqli_real_escape_string($this->connection, $titolo_inglese);
+    $autore_opera = mysqli_real_escape_string($this->connection, $autore_opera);
+    $testo = mysqli_real_escape_string($this->connection, $testo);
+    $tipo = mysqli_real_escape_string($this->connection, $tipo);
+    $tags = mysqli_real_escape_string($this->connection, $tags);
+    $alt_immagine = mysqli_real_escape_string($this->connection, $alt_immagine);
+    $immagine = mysqli_real_escape_string($this->connection, $immagine);
+    $voto = mysqli_real_escape_string($this->connection, $voto);
+    if($old_nome_recensione === null){
+      $query = sprintf("INSERT INTO recensioni VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $nome_recensione, $autore, $autore_opera, $titolo, $titolo_inglese, $testo, $tipo, $tags, $alt_immagine, $immagine, $voto);
+    }elseif($update_image){
+      $query = sprintf("UPDATE recensioni SET nome_recensione = '%s', autore = '%s', autore_opera = '%s', titolo = '%s', titolo_inglese = '%s', testo = '%s', tipo = '%s', tags = '%s', alt_immagine = '%s', immagine = '%s', voto = '%s' WHERE nome_recensione = '%s'", $nome_recensione, $autore, $autore_opera, $titolo, $titolo_inglese, $testo, $tipo, $tags, $alt_immagine, $immagine, $voto, $old_nome_recensione);
+    }else{
+      $query = sprintf("UPDATE recensioni SET nome_recensione = '%s', autore = '%s', autore_opera = '%s', titolo = '%s', titolo_inglese = '%s', testo = '%s', tipo = '%s', tags = '%s', alt_immagine = '%s', voto = '%s' WHERE nome_recensione = '%s'", $nome_recensione, $autore, $autore_opera, $titolo, $titolo_inglese, $testo, $tipo, $tags, $alt_immagine, $voto, $old_nome_recensione);
+    }
+    return mysqli_query($this->connection, $query);
+  }
+
   public function closeDBConnection(){
     mysqli_close($this->connection);
   }

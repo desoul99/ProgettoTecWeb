@@ -1,0 +1,64 @@
+<form class="form-recensione" method="post" action="form_recensione_endpoint.php" enctype="multipart/form-data" onsubmit="return validateForm();">
+    <fieldset>
+        <legend>{{legend}}</legend>
+        <div class="input">
+            <label for="nome_recensione">Nome recensione(obbligatorio, solo lettere, niente spazi):</label>
+            <span><input id="nome_recensione" type="text" value="{{nome_recensione}}" name="nome_recensione" /></span>
+            {{old_nome_recensione}}
+        </div>
+        <div class="input">
+            <label for="autore">Recensore(obbligatorio):</label>
+            <select id="autore" name="autore">
+                {{listaRecensori}}
+            </select>
+        </div>
+        <div class="input">
+            <label for="titolo">Titolo opera(obbligatorio):</label>
+            <span><input id="titolo" type="text" value="{{titolo}}" name="titolo" /></span>
+        </div>
+        <div class="input">
+            <label for="titolo_inglese">Titolo inglese:</label>
+            <input id="titolo_inglese" type="checkbox"{{titolo_inglese}} name="titolo_inglese" />
+        </div>
+        <div class="input">
+            <label for="autore_opera">Autore opera(obbligatorio):</label>
+            <span><input id="autore_opera" type="text" value="{{autore_opera}}" name="autore_opera" /></span>
+        </div>
+        <div class="input">
+            <label for="testo">Testo recensione(obbligatorio):</label>
+            <span><textarea id="testo" name="testo" rows="4" cols="50">{{testo}}</textarea></span>
+        </div>
+        <div class="input">
+            <label for="tipo">Tipo opera(obbligatorio):</label>
+            <span><input id="tipo" type="text" value="{{tipo}}" name="tipo" /></span>
+        </div>
+        <div class="input">
+            <label for="tags">Tags:</label>
+            <span><textarea id="tags" name="tags" rows="4" cols="50">{{tags}}</textarea></span>
+        </div>
+        <div class="input input-file">
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+            {{old_immagine}}
+            <label for="immagine">Immagine:</label>
+            <span><input id="immagine" type="file" name="immagine" /></span>
+        </div>
+        <div class="input">
+            <label for="alt_immagine">Testo alternativo immagine:</label>
+            <span><input id="alt_immagine" type="text" value="{{alt_immagine}}" name="alt_immagine" /></span>
+        </div>
+        <div class="input">
+            <label for="voto">Recensore(obbligatorio):</label>
+            <select id="voto" name="voto">
+               <option{{selected1}}>1/5</option>
+               <option{{selected2}}>2/5</option>
+               <option{{selected3}}>3/5</option>
+               <option{{selected4}}>4/5</option>
+               <option{{selected5}}>5/5</option>
+            </select>
+        </div>
+        <div class="input">
+            <label for="submit">{{formValue}} recensione:</label>
+            <input id="submit" type="submit" value="{{formValue}}" name="submit" />
+        </div>
+    </fieldset>
+</form>

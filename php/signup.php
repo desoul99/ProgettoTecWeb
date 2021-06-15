@@ -2,8 +2,7 @@
 require_once('dbConnection.php');
 require_once('session.php');
 
-#!checkLogin()
-if (!isset($_POST['signup'])) {
+if (!checkLogin() || !isset($_POST['signup'])) {
 	if (isset($_POST['previousPage'])) {
 		header('Location: ' . $_POST['previousPage']);
 	} else {
@@ -44,3 +43,4 @@ if (empty($username) || empty($password)) {
 }
 printf($msg, '<a href="' . $previousPage . '">Torna indietro</a>');
 
+?>
