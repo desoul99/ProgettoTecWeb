@@ -41,6 +41,16 @@ class DBAccess{
     }
   }
 
+  public function getContatti(){
+    $query = sprintf("SELECT * FROM contatto ORDER BY data DESC");
+    $queryResult = mysqli_query($this->connection, $query);
+    if(mysqli_num_rows($queryResult) == 0){
+      return null;
+    }else{
+      return mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
+    }
+  }
+
   public function removeRecensione($nome){
     $query = sprintf("DELETE FROM recensioni WHERE nome_recensione = '%s'", mysqli_real_escape_string($this->connection, $nome));
     return mysqli_query($this->connection, $query);
