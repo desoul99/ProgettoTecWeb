@@ -41,6 +41,10 @@ if (empty($username) || empty($password)) {
 	}
 	$DBConnection->closeDBConnection();
 }
-printf($msg, '<a href="' . $previousPage . '">Torna indietro</a>');
+
+$msg = sprintf($msg, '<a href="dashboard.php">Torna indietro</a>');
+createFeedback($msg, 'Home');
+header('Location: dashboard.php');
+exit;
 
 ?>

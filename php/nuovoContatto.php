@@ -26,7 +26,6 @@ if(isset($_POST['submit'])){
     //inserire info nel db
     $dbAcces = new DBAccess();
     $openDBConnection = $dbAcces->openDBConnection();
-
     $risultato = $dbAcces->inserisciContatto($nome, $mail, $oggetto, $messaggio);
     if($risultato == true){//inserimento ok
       $flag = TRUE;
@@ -34,6 +33,15 @@ if(isset($_POST['submit'])){
   }
 }
 
-if($flag == true)
-  echo $paginaHTMLConferma;
+if($flag == true){
+  $msg = "Dati inseriti correttamente, verrete ricontattati al più presto. %s";
+}else{
+  $msg = "Errore nell' inserimento contatto. Riprovare o contattare un amministratore. %s";
+}
+
+$msg = sprintf($msg, '<a href="contatti.php">Torna indietro</a>');
+
+createFeedback($msg, 'Contatti');
+header('Location: risultato.php');
+exit;
 ?>

@@ -5,11 +5,28 @@ function checkLogin(){
 }
 
 function getUsername(){
-    return $_SESSION['recensore'];
+    return $_SESSION['recensore'] ?? null;
 }
 
 function createSession($username){
     $_SESSION['recensore'] = $username;
+}
+
+function getFeedback(){
+    return $_SESSION['feedback'] ?? null;
+}
+function getBreadcrumbs(){
+    return $_SESSION['breadcrumbs'] ?? null;
+}
+
+function deleteFeedback(){
+    unset($_SESSION['feedback']);
+    unset($_SESSION['breadcrumbs']);
+}
+
+function createFeedback($feedback, $breadcrumbs){
+    $_SESSION['feedback'] = $feedback;
+    $_SESSION['breadcrumbs'] = $breadcrumbs;
 }
 
 function deleteSession(){

@@ -30,7 +30,7 @@ $DBConnection->closeDBConnection();
 $nonWrappedTitle = '';
 $wrappedTitle = '';
 if(!$recensione){
-    $pageContent = "La recensione richiesta non è presente nel sistema.";
+    $pageContent = '<p id="feedback">La recensione richiesta non è presente nel sistema.</p>';
 }else{
     $nonWrappedTitle = $recensione[0]['titolo'];
     $wrappedTitle = $recensione[0]['titolo_inglese'] ? '<span xml:lang="en">'.$recensione[0]['titolo'].'</span>' : $recensione[0]['titolo'];

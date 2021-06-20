@@ -11,6 +11,7 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
     $previousPage = $_POST['previousPage'] ?? '';
+    $previousPage = filter_var($previousPage, FILTER_SANITIZE_URL);
     
     if (empty($username) || empty($password)) {
         $msg = 'Username o password non validi %s';
@@ -25,10 +26,18 @@ if (isset($_POST['login'])) {
         if (!$user || password_verify($password, $user['password']) === false) {
             $msg = 'Credenziali errate %s';
         } else {
-            $msg = 'Accesso effettuato correttamente %s';
             createSession($username);
+            header('Location: '.$previousPage);
+            exit;
         }
     }
-    printf($msg, '<a href="'.$previousPage.'">Torna indietro</a>');
+}else{
+    $msg = "Errore nel login. Riprovare o contattare un amministratore. %s";
 }
+
+$msg = sprintf($msg, '<a href="'.$previousPage.'">Torna indietro</a>');
+
+createFeedback($msg, 'Home');
+header('Location: risultato.php');
+exit;
 ?>

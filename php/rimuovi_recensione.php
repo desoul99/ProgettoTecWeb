@@ -26,5 +26,10 @@ if (empty($nome)) {
 		createSession($username);
 	}
 }
-printf($msg, '<a href="lista_recensioni.php">Torna indietro</a>');
+
+$msg = sprintf($msg, '<a href="lista_recensioni.php">Torna indietro</a>');
+
+createFeedback($msg, 'Recensioni');
+header('Location: risultato.php');
+exit;
 ?>

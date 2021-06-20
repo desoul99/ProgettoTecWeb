@@ -136,7 +136,9 @@ if($_POST['submit'] === 'Modifica' && $_FILES['immagine']['error'] === 4){
 $DBConnection->closeDBConnection();
 
 if($result === false){
-    printf("Errore nella connessione al database. Riprovare o contattare un amministratore.".'<a href="lista_recensioni.php">Torna indietro</a>');
+    $msg = 'Errore nella connessione al database. Riprovare o contattare un amministratore. <a href="lista_recensioni.php">Torna indietro</a>');
+    createFeedback($msg, 'Recensioni');
+    header('Location: risultato.php');
     die();
 }
 
@@ -146,7 +148,15 @@ if($_POST['submit'] === 'Modifica' && $_FILES['immagine']['error'] === 0 && $imm
     error_reporting(-1);
 }
 
-printf("Operazione effettuata correttamente".'<a href="lista_recensioni.php">Torna indietro</a>');
+if($_POST['submit'] === 'Modifica'){
+    $msg = "Recensione modificata con successo. %s";
+}else{
+    $msg = "Recensione aggiunta con successo. %s";
+}
 
+$msg = sprintf($msg, '<a href="lista_recensioni.php">Torna indietro</a>');
+createFeedback($msg, 'Recensioni');
+header('Location: risultato.php');
+die();
 ?>
 

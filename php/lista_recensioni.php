@@ -45,7 +45,7 @@ if($listaRecensioni){
     }
     
 }else{
-    $pageContent = "Nessuna recensione presente nel sistema.";
+    $pageContent = '<p id="feedback">Nessuna recensione presente nel sistema.</p>';
 }
 
 
