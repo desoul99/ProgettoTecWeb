@@ -2,6 +2,8 @@
 require_once('session.php');
 require_once('dbConnection.php');
 
+deleteFeedback();
+
 if (!checkLogin() || !isset($_GET['nome'])) {
 	header('Location: lista_recensioni.php');
 	exit;

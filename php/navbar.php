@@ -17,14 +17,18 @@ function navbar($currentPage, $clickable = false, $recensore = false){
     $navbar = file_get_contents('../html/navbar.html');
     if($currentPage === 'Home'){
         $pageList[$currentPage] = ' xml:lang="en" class="pagCorrente nav_list"';
-    }else{
+    }elseif($currentPage != 'Dashboard'){
         $pageList[$currentPage] = '  class="pagCorrente nav_list"';
     }
     if(!$clickable){
         $pageList[$currentPage.'URL'] = $currentPage;
     }
     if($recensore){
-        $pageList['recensore'] = '<li class="nav_list"><a class="nav_link" xml:lang="en" href="dashboard.php">Dashboard</a></li>';
+        if($currentPage === 'Dashboard'){
+            $pageList['recensore'] = '<li class="pagCorrente nav_list">Dashboard</li>';
+        }else{
+            $pageList['recensore'] = '<li class="nav_list"><a class="nav_link" xml:lang="en" href="dashboard.php">Dashboard</a></li>';
+        }   
         $pageList['recensore'] .= '<li class="nav_list"><a class="nav_link" xml:lang="en" href="logout.php">Logout</a></li>';
     }
     return Utils::template($pageList, $navbar);

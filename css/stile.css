@@ -199,6 +199,9 @@ h2 {
 .img-samuele {
   background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
 }
+.img-marco {
+  background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
+}
 
 .group-member {
   display: block;
@@ -402,30 +405,30 @@ h2 {
   justify-content: space-between;
   gap: 0.5em;
   }*/
-  #recensioni{
+  .recensioni{
     list-style-type: none;
     padding-inline-start: 0px;
   }
 
-  #recensioni .flex-container {
+  .recensioni .flex-container {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
 
-  #recensioni .flex-container p {
+  .recensioni .flex-container p {
     word-wrap: break-word;
   }
 
-  #recensioni .flex-container .hide{
+  .recensioni .flex-container .hide{
     text-indent: 150%;
   }
 
-  #recensioni h1{
+  .recensioni h1{
     padding:0%;
     margin: 0.3em;
   }
 
-  #recensioni h2{
+  .recensioni h2{
     padding:0%;
     margin: 0em;
     text-indent: 0.3em;

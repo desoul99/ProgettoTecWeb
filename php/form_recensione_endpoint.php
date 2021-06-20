@@ -2,6 +2,7 @@
 require_once('dbConnection.php');
 require_once('session.php');
 require_once('utils.php');
+deleteFeedback();
 
 if (!checkLogin() || !isset($_POST['submit']) || ($_POST['submit'] != 'Aggiungi' && $_POST['submit'] != 'Modifica')) {
 	header('Location: lista_recensioni.php');
@@ -67,8 +68,8 @@ do{
         $error = "Autore non valido. Deve avere meno di 32 caratteri %s";
         break;
     }
-    if(strlen($autore_opera)>32 || strlen($autore_opera) === 0){
-        $error = "Autore opera non valido. Deve avere meno di 32 caratteri %s";
+    if(strlen($autore_opera)>128 || strlen($autore_opera) === 0){
+        $error = "Autore opera non valido. Deve avere meno di 128 caratteri %s";
         break;
     }
     if(strlen($titolo)>128 || strlen($titolo) === 0){
@@ -87,7 +88,7 @@ do{
         $error = "Tags non valide. Devono avere meno di 256 caratteri %s";
         break;
     }
-    if(strlen($alt_immagine)>64 || strlen($alt_immagine) === 0){
+    if(strlen($alt_immagine)>64){
         $error = "Alt immagine non valido. Deve avere meno di 64 caratteri %s";
         break;
     }

@@ -1,8 +1,8 @@
 let dettagli_form = {
-  "nome": ["Nome", /\w{2,20}$/, "Nome non corretto"],//w{2,20} controlla che ci sia da un min di 2 lettere ad un max di 29
+  "nome": ["Nome", /^[\w\s]{2,20}$/, "Nome non corretto"],//w{2,20} controlla che ci sia da un min di 2 lettere ad un max di 29
   "mail": ["Mail", /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/, "Mail non valida"],
-  "oggetto": ["Oggetto", /\w{5,30}$/, "Oggetto non inserito"],
-  "messaggio": ["Messaggio da inserire.....", /\w{10,}$/, "Messaggio non inserito"]
+  "oggetto": ["Oggetto", /^[\w\s]{5,30}$/, "Oggetto non inserito"],
+  "messaggio": ["Messaggio da inserire.....", /^.{10,1024}$/s, "Messaggio non inserito"]
 }
 function campodefault(input){
   input.className = "default-text";

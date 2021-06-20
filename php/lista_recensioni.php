@@ -5,18 +5,22 @@ require_once('dbConnection.php');
 require_once('session.php');
 
 $template = file_get_contents('../html/template.html');
-$pageContent = file_get_contents('../html/lista_recensioni.html');
+$pageContent = file_get_contents('../html/lista_recensioni_content.html');
+$gruppoRecensioni = file_get_contents('../html/lista_recensioni.html');
 $templateRecensione = file_get_contents('../html/item_recensione.html');
 
 $isRecensore = false;
 if(!checkLogin()){
     $loginSection = Utils::template(array('currentPage' => 'lista_recensioni.php'),file_get_contents('../html/login_form.html'));
     $navBar = navbar('Recensioni');
+    $aggiuntaRecensione = '';
 }else{
     $loginSection = '';
     $navBar = navbar('Recensioni', false, true);
+    $aggiuntaRecensione = '<a href="aggiungi_recensione.php">Aggiungi recensione</a>';
     $isRecensore = true;
 }
+
 
 $DBConnection = new DBAccess;
 if(!$DBConnection->openDBConnection()){
@@ -25,10 +29,15 @@ if(!$DBConnection->openDBConnection()){
 $listaRecensioni = $DBConnection->getRecensione();
 $DBConnection->closeDBConnection();
 
+$lettere = array();
+$contentRecensioni = '';
+$prevletter = '';
 if($listaRecensioni){
     $recensioni = '';
     foreach($listaRecensioni as $singleRecensione){
-        $singleRecensione['testo'] = substr($singleRecensione['testo'], 0, 120);
+        $letter = $singleRecensione['nome_recensione'][0];
+        $singleRecensione['voto'] = $singleRecensione['voto'].'/5';
+        $singleRecensione['testo'] = Utils::html_cut($singleRecensione['testo'], 120);
         $singleRecensione['titolo'] = $singleRecensione['titolo_inglese'] ? '<span xml:lang="en">'.$singleRecensione['titolo'].'</span>' : $singleRecensione['titolo'];
         if($isRecensore){
             $singleRecensione['opzioniRecensore'] = '<a class="rimuovi-recensione" href="rimuovi_recensione.php?nome={{nome_recensione}}">Rimuovi recensione</a>'.PHP_EOL.'<a class="modifica-recensione" href="modifica_recensione.php?nome={{nome_recensione}}">Modifica recensione</a>';
@@ -36,18 +45,30 @@ if($listaRecensioni){
         }else{
             $singleRecensione['opzioniRecensore'] = '';
         }
+        if(isset($lettere[$letter]) ? count($lettere[$letter]) : false){
+            $lettere[$letter][] = $singleRecensione;
+        }else{
+            if(count($lettere)){
+                $contentRecensioni .= Utils::template(array('recensioni' => $recensioni, 'letteraId' => $prevletter), $gruppoRecensioni);
+                $recensioni = '';
+            }
+            $lettere[$letter] = [$singleRecensione];
+        }
         $recensioni .= Utils::template($singleRecensione, $templateRecensione);
+        $prevletter = $letter;
     }
-    if($isRecensore){
-        $pageContent = Utils::template(array('recensioni' => $recensioni, 'aggiuntaRecensione' => '<a href="aggiungi_recensione.php">Aggiungi recensione</a>'), $pageContent);
-    }else{
-        $pageContent = Utils::template(array('recensioni' => $recensioni, 'aggiuntaRecensione' => ''), $pageContent);
-    }
-    
+    $contentRecensioni .= Utils::template(array('recensioni' => $recensioni, 'letteraId' => $letter), $gruppoRecensioni);
 }else{
-    $pageContent = '<p id="feedback">Nessuna recensione presente nel sistema.</p>';
+    $contentRecensioni = '<p id="feedback">Nessuna recensione presente nel sistema.</p>';
 }
 
+$aiutiLettere = '';
+foreach($lettere as $lettera => $value){
+    $aiutiLettere .= '<a class="hide" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a>';
+}
+
+
+$pageContent = Utils::template(array('aiutiLettere' => $aiutiLettere, 'aggiuntaRecensione' => $aggiuntaRecensione, 'listaRecensioni' => $contentRecensioni), $pageContent);
 
 $replacements = array(
     'pageTitle' => 'Recensioni - Orient Review',

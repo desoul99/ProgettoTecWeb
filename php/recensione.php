@@ -35,6 +35,7 @@ if(!$recensione){
     $nonWrappedTitle = $recensione[0]['titolo'];
     $wrappedTitle = $recensione[0]['titolo_inglese'] ? '<span xml:lang="en">'.$recensione[0]['titolo'].'</span>' : $recensione[0]['titolo'];
     $recensione[0]['titolo_recensione'] = $wrappedTitle;
+    $recensione[0]['voto'] = $recensione[0]['voto'].'/5';
     $pageContent = Utils::template($recensione[0], $pageContent);
 }
 

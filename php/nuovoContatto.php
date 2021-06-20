@@ -1,6 +1,8 @@
 <?php  //pagina raggiunta dall'utente
 require_once('utils.php');
 require_once('session.php');
+deleteFeedback();
+
 $paginaHTML = file_get_contents('..' . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR .'contatti.html');//importo HTML con form
 require_once __DIR__ . DIRECTORY_SEPARATOR . "dbConnection.php";
 

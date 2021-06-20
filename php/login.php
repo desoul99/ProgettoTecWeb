@@ -1,6 +1,7 @@
 <?php
 require_once('session.php');
 require_once('dbConnection.php');
+deleteFeedback();
 
 if (checkLogin()) {
     header('Location: dashboard.php');

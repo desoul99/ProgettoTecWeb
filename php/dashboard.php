@@ -32,8 +32,9 @@ if($listaContatti){
     $contatti = "<h2>Nessun messaggio di contatto presente nel sistema.</h2>";
 }
 
-$pageContent = Utils::template(array('contatti' => $contatti),file_get_contents('../html/dashboard_contatti.html'));
-$pageContent .= Utils::template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/signup_form.html'));
+$pageContent = Utils::template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/signup_form.html'));
+$pageContent .= Utils::template(array('contatti' => $contatti),file_get_contents('../html/dashboard_contatti.html'));
+
 
 
 $replacements = array(

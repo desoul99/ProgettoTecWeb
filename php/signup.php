@@ -2,6 +2,8 @@
 require_once('dbConnection.php');
 require_once('session.php');
 
+deleteFeedback();
+
 if (!checkLogin() || !isset($_POST['signup'])) {
 	if (isset($_POST['previousPage'])) {
 		header('Location: ' . $_POST['previousPage']);
@@ -44,7 +46,7 @@ if (empty($username) || empty($password)) {
 
 $msg = sprintf($msg, '<a href="dashboard.php">Torna indietro</a>');
 createFeedback($msg, 'Home');
-header('Location: dashboard.php');
+header('Location: risultato.php');
 exit;
 
 ?>
