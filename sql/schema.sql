@@ -1,9 +1,9 @@
-create database if not exists Orient_DB;
+create database if not exists orient_db;
 
-use Orient_DB;
+use orient_db;
 
-DROP table if exists Recensori;
-CREATE TABLE Recensori
+DROP table if exists recensori;
+CREATE TABLE recensori
 (
  username         varchar(32) NOT NULL,
  password         varchar(256) NOT NULL,
@@ -11,8 +11,8 @@ CREATE TABLE Recensori
 PRIMARY KEY (username)
 );
 
-DROP table if exists Recensioni;
-CREATE TABLE Recensioni
+DROP table if exists recensioni;
+CREATE TABLE recensioni
 (
  nome_recensione  varchar(32) NOT NULL,
  autore           varchar(32) NOT NULL,
@@ -28,11 +28,11 @@ CREATE TABLE Recensioni
 
 PRIMARY KEY (nome_recensione),
 CONSTRAINT FOREIGN KEY (autore) 
-	REFERENCES Recensori(username)
+	REFERENCES recensori(username)
 );
 
-DROP table if exists Uscite;
-CREATE TABLE Uscite
+DROP table if exists uscite;
+CREATE TABLE uscite
 (
  titolo           varchar(128) NOT NULL,
  prezzo           varchar(128) NOT NULL,
@@ -42,8 +42,8 @@ CREATE TABLE Uscite
 PRIMARY KEY (titolo, data_uscita)
 );
 
-DROP table if exists Contatto;
-CREATE TABLE Contatto
+DROP table if exists contatto;
+CREATE TABLE contatto
 (
  nome             varchar(128) NOT NULL,
  email         	  varchar(32) NOT NULL,
