@@ -1,22 +1,21 @@
 <?php  //pagina raggiunta dall'utente
 require_once('utils.php');
+require_once('session.php');
 $paginaHTML = file_get_contents('..' . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR .'contatti.html');//importo HTML con form
-$paginaHTMLConferma = file_get_contents('..' . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR .'corretto.html');//importo HTML con form
 require_once __DIR__ . DIRECTORY_SEPARATOR . "dbConnection.php";
-
-$mail = '';
-$nome = '';
-$oggetto = '';
-$messaggio = '';
 
 $flag = FALSE;
 
 if(isset($_POST['submit'])){
 
-  $nome = Utils::cleanInput($_POST['nome']);
-  $mail = Utils::cleanInput($_POST['mail']);
-  $oggetto = Utils::cleanInput($_POST['oggetto']);
-  $messaggio = Utils::cleanInput($_POST['messaggio']);
+  $mail = $_POST['mail'] ?? '';
+  $nome = $_POST['nome'] ?? '';
+  $oggetto = $_POST['oggetto'] ?? '';
+  $messaggio = $_POST['messaggio'] ?? '';
+  $nome = Utils::cleanInput($nome);
+  $mail = Utils::cleanInput($mail);
+  $oggetto = Utils::cleanInput($oggetto);
+  $messaggio = Utils::cleanInput($messaggio);
   $controlMailFirst = explode("@", $mail);
   $controlMailSecond = explode(".", $controlMailFirst[1]);
   //controlli
@@ -33,7 +32,7 @@ if(isset($_POST['submit'])){
   }
 }
 
-if($flag == true){
+if($flag === TRUE){
   $msg = "Dati inseriti correttamente, verrete ricontattati al più presto. %s";
 }else{
   $msg = "Errore nell' inserimento contatto. Riprovare o contattare un amministratore. %s";

@@ -119,7 +119,9 @@ do{
 }while(false);
 
 if($error){
-    printf($error, '<a href="lista_recensioni.php">Torna indietro</a>');
+    $error = sprintf($error, '<a href="lista_recensioni.php">Torna indietro</a>');
+    createFeedback($error, 'Recensioni');
+    header('Location: risultato.php');
     die();
 }
 
@@ -136,7 +138,7 @@ if($_POST['submit'] === 'Modifica' && $_FILES['immagine']['error'] === 4){
 $DBConnection->closeDBConnection();
 
 if($result === false){
-    $msg = 'Errore nella connessione al database. Riprovare o contattare un amministratore. <a href="lista_recensioni.php">Torna indietro</a>');
+    $msg = 'Errore nella connessione al database. Riprovare o contattare un amministratore. <a href="lista_recensioni.php">Torna indietro</a>';
     createFeedback($msg, 'Recensioni');
     header('Location: risultato.php');
     die();
