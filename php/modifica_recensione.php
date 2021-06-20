@@ -37,6 +37,7 @@ if($recensione['titolo_inglese'] === '1'){
     $recensione['titolo_inglese'] = '';
 }
 $recensione['testo'] = htmlentities($recensione['testo'], ENT_XHTML); #non posso avere span in un textarea, poi tolgo l'escape nell'endpoint
+$recensione['autore_opera'] = htmlentities($recensione['autore_opera'], ENT_QUOTES);
 $recensoriOptions = '';
 foreach($listaRecensori as $recensore){
     if($recensore['username'] === $recensione['autore']){
