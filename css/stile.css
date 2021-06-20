@@ -85,7 +85,8 @@ body {
   }
 
   #nav_menu .pagCorrente {
-    padding:0.5em;
+    padding-top:0.5em;
+    padding-bottom: 0.5em;
   }
 }
 #navbar .pagCorrente a{
@@ -235,6 +236,7 @@ h2 {
   #content .flex-container .mobile{
     visibility: visible;
   }
+}
   /*--------------------------- CONTATTI ---------------------------------*/
   .contatti ul {
     list-style-type: none;

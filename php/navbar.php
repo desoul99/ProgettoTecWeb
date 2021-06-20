@@ -2,11 +2,11 @@
 function navbar($currentPage, $clickable = false, $recensore = false){
     require_once('utils.php');
     $pageList = array(
-        'Home' => ' class="nav_link"',
-        'Contatti' => ' class="nav_link"',
-        'Chi siamo' => ' class="nav_link"',
-        'Recensioni' => ' class="nav_link"',
-        'Calendario uscite' => ' class="nav_link"',
+        'Home' => ' class="nav_list"',
+        'Contatti' => ' class="nav_list"',
+        'Chi siamo' => ' class="nav_list"',
+        'Recensioni' => ' class="nav_list"',
+        'Calendario uscite' => ' class="nav_list"',
         'recensore' => '',
         'HomeURL' => '<a class="nav_link" xml:lang="en" href="home.php">Home</a>',
         'RecensioniURL' => '<a class="nav_link" href="lista_recensioni.php">Recensioni</a>',
