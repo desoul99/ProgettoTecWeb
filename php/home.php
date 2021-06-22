@@ -16,10 +16,10 @@ if(!checkLogin()){
 
 $replacements = array(
     'pageTitle' => 'Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Orient Review',
+    'metaDescription' => 'Homepage del sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => '<span xml:lang="en">Home</span>',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

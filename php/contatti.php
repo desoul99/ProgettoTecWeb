@@ -18,10 +18,10 @@ if(!checkLogin()){
 
 $replacements = array(
     'pageTitle' => 'Contatti - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Contatti - Orient Review',
+    'metaDescription' => 'Informazioni e form di contatto del sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri, contatti',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Contatti',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

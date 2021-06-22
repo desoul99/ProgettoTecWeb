@@ -25,11 +25,11 @@ if(!checkLogin()){
 $pageContent = Utils::template(array('feedback' => $feedback), $pageContent);
 
 $replacements = array(
-    'pageTitle' => 'Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'pageTitle' => 'Risultato - Orient Review',
+    'metaTitle' => 'Risultato - Orient Review',
+    'metaDescription' => 'Risultato operazione nel sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => $breadcrumbs.' > Risultato',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

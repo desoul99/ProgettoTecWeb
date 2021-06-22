@@ -56,10 +56,10 @@ $pageContent = Utils::template($recensione, file_get_contents('../html/form_rece
 
 $replacements = array(
     'pageTitle' => 'Modifica Recensione - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Modifica Recensione - Orient Review',
+    'metaDescription' => 'Pagina di modifica recensione del sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Recensioni > Modifica recensione',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

@@ -64,7 +64,7 @@ if($listaRecensioni){
 
 $aiutiLettere = '';
 foreach($lettere as $lettera => $value){
-    $aiutiLettere .= '<a class="hide" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a>';
+    $aiutiLettere .= '<a class="hide" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a> ';
 }
 
 
@@ -72,10 +72,10 @@ $pageContent = Utils::template(array('aiutiLettere' => $aiutiLettere, 'aggiuntaR
 
 $replacements = array(
     'pageTitle' => 'Recensioni - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Recensioni - Orient Review',
+    'metaDescription' => 'Lista recensioni del sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Recensioni',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

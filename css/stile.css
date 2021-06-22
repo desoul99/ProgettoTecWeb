@@ -391,6 +391,9 @@ h2 {
     text-align: center;
     line-height: 2em;
   }
+  #footer fieldset{
+    color: #f3efe8;
+  }
   .linkFooter {
     color: cyan;
   }

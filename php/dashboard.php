@@ -39,10 +39,10 @@ $pageContent .= Utils::template(array('contatti' => $contatti),file_get_contents
 
 $replacements = array(
     'pageTitle' => 'Dashboard - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Dashboard - Orient Review',
+    'metaDescription' => 'Dashboard riservata agli utenti recensori del sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Dashboard',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

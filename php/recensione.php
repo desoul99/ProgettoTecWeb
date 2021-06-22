@@ -41,10 +41,10 @@ if(!$recensione){
 
 $replacements = array(
     'pageTitle' => $nonWrappedTitle.' - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => $nonWrappedTitle.' - Orient Review',
+    'metaDescription' => 'Recensione di '.$nonWrappedTitle." nel sito Orient Review",
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Recensioni > '.$wrappedTitle,
     'navBar' => $navBar,
     'pageContent' => $pageContent,

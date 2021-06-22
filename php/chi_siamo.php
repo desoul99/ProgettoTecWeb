@@ -17,10 +17,10 @@ if(!checkLogin()){
 
 $replacements = array(
     'pageTitle' => 'Chi siamo - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Chi siamo - Orient Review',
+    'metaDescription' => 'Presentazione dei creatori del sito Orient Review',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri, chisiamo',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Chi siamo',
     'navBar' => $navBar,
     'pageContent' => $pageContent,

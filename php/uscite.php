@@ -16,10 +16,10 @@ if(!checkLogin()){
 
 $replacements = array(
     'pageTitle' => 'Calendario uscite - Orient Review',
-    'metaTitle' => 'Placeholder',
-    'metaDescription' => 'Placeholder',
-    'metaKeywords' => 'Placeholder',
-    'metaAuthors' => 'Placeholder',
+    'metaTitle' => 'Calendario uscite - Orient Review',
+    'metaDescription' => 'Calendario delle prossime uscite di anime e manga',
+    'metaKeywords' => 'recensioni, oriente, manga, anime, orientreview, fumetti, libri, calendariouscite',
+    'metaAuthors' => 'Marco Dello Iacovo, Lorenzo Piran, Samuele Pozzebon, Stefano Manunza',
     'breadcrumb' => 'Calendario uscite',
     'navBar' => $navBar,
     'pageContent' => $pageContent,
