@@ -36,3 +36,7 @@ html{
   font-size: 0.7em;
   border-bottom: 1px solid #ddd;
 }
+
+.login{
+  display: none;
+}
