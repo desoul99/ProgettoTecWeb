@@ -11,18 +11,42 @@ if (!checkLogin() || !isset($_GET['nome'])) {
 
 $nome = $_GET['nome'] ?? '';
 
+$DBConnection = new DBAccess;
+if (!$DBConnection->openDBConnection()) {
+	die("Errore nella connessione al database. Riprovare o contattare un amministratore. %s");
+}
+$recensione = $DBConnection->getRecensione($_GET['nome']);
+$immagine = explode('.', $recensione[0]['immagine']);
+$cssoldImage = <<<EOD
+
+.img-$immagine[0] {
+  background-image: url("../images/$immagine[0].$immagine[1]");
+}
+
+EOD;
+
 if (empty($nome)) {
 	$msg = 'Nome recensione non valido %s';
 } else {
-	$DBConnection = new DBAccess;
-	if (!$DBConnection->openDBConnection()) {
-		die("Errore nella connessione al database. Riprovare o contattare un amministratore. %s");
-	}
+	
+	
 	$result = $DBConnection->removeRecensione($nome);
 	$DBConnection->closeDBConnection();
 
 	if ($result) {
         $msg = 'Recensione rimossa correttamente %s';
+		error_reporting(0);
+    	unlink('../images/'.$recensione[0]['immagine']);
+    	error_reporting(-1);
+		
+		echo $cssoldImage;
+		$cssFile1 = file_get_contents('../css/stile.css');
+		$cssFile2 = file_get_contents('../css/print.css');
+		$cssFile1 = str_replace($cssoldImage, '', $cssFile1);
+		$cssFile2 = str_replace($cssoldImage, '', $cssFile2);
+		file_put_contents('../css/stile.css', $cssFile1);
+		file_put_contents('../css/print.css', $cssFile2);
+
 	} else {
 		$msg = 'Errore nella rimozione. Riprovare o contattare un amministratore. %s';
 		createSession($username);

@@ -39,6 +39,7 @@ if($listaRecensioni){
         $singleRecensione['voto'] = $singleRecensione['voto'].'/5';
         $singleRecensione['testo'] = Utils::html_cut($singleRecensione['testo'], 120);
         $singleRecensione['titolo'] = $singleRecensione['titolo_inglese'] ? '<span xml:lang="en">'.$singleRecensione['titolo'].'</span>' : $singleRecensione['titolo'];
+        $singleRecensione['immagine'] = explode('.',$singleRecensione['immagine'])[0];
         if($isRecensore){
             $singleRecensione['opzioniRecensore'] = '<a class="rimuovi-recensione" href="rimuovi_recensione.php?nome={{nome_recensione}}">Rimuovi recensione</a>'.PHP_EOL.'<a class="modifica-recensione" href="modifica_recensione.php?nome={{nome_recensione}}">Modifica recensione</a>';
             $singleRecensione['opzioniRecensore'] = Utils::template($singleRecensione, $singleRecensione['opzioniRecensore']);
@@ -66,7 +67,6 @@ $aiutiLettere = '';
 foreach($lettere as $lettera => $value){
     $aiutiLettere .= '<a class="hide" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a> ';
 }
-
 
 $pageContent = Utils::template(array('aiutiLettere' => $aiutiLettere, 'aggiuntaRecensione' => $aggiuntaRecensione, 'listaRecensioni' => $contentRecensioni), $pageContent);
 
