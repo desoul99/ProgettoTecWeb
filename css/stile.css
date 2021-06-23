@@ -349,33 +349,29 @@ h2 {
   .table tbody tr:nth-last-of-type(even) {
     background-color: #f3eddd;
   }
-  @media only screen and (max-width: 800px){
-    .table thead{
+  @media only screen and (max-width: 480px){
+    thead, tfoot{
       display: none;
     }
-    .table, .table tbody, .table tr, .table td{
-      display: block;
-      width: 100%;
+    td[data-title]:before{
+      content: attr(data-title) "\00A0:\00A0";
     }
-    .table tr{
-      margin-bottom: 15px;
+    tr, td,th{
+      display: block;/*per farli andare a capo*/
     }
-    .table td{
-      padding-left: 15%;
-      text-align: center;
-      position: relative;
+    th{
+      background-color: #f3efe8;
+      color: white;
     }
-    .table td::before{
-      content: attr(data-label);
-      position: absolute;
-      left: 0;
-      width: 30%;
-      /*padding-left: 15%;*/
-      font-size: 1.1em;
-      font-weight: bold;
+    table, tbody, tr, th, td{
+      border: none;
     }
-    .table caption{
-      display: none;
+    th,td{
+      border: 1.5px solid #000;
+      border-top: none;
+    }
+    tr:first-child{
+      border-top: 1px solid #000;
     }
   }
   /*-------------------------------- FOOTER --------------------------------*/
