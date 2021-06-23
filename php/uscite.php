@@ -8,10 +8,10 @@ $pageContent = file_get_contents('../html/uscite.html');
 
 if(!checkLogin()){
     $loginSection = Utils::template(array('currentPage' => 'uscite.php'),file_get_contents('../html/login_form.html'));
-    $navBar = navbar('Calendario uscite', true);
+    $navBar = navbar('Calendario uscite');
 }else{
     $loginSection = '';
-    $navBar = navbar('Calendario uscite', true, true);
+    $navBar = navbar('Calendario uscite', false, true);
 }
 
 $replacements = array(

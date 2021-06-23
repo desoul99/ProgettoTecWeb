@@ -4,6 +4,9 @@
 body {
   background-color: #383232;
 }
+p{
+  text-align: justify;
+}
 /*-------------------------------- HEADER --------------------------------*/
 #header {
   background-color: #383232;
@@ -22,8 +25,15 @@ body {
 #breadcrumb {
   background-color: #383232;
   color: #f3efe8;
-  font-size: 2em;
+  
   padding: 0.25em;
+}
+
+@media only screen and (max-width: 480px) {
+  #breadcrumb {
+    font-size: 1em;
+    padding: 0.7em;
+  }
 }
 /*-------------------------------- NAV BAR --------------------------------*/
 #navbar {
@@ -87,6 +97,10 @@ body {
   #nav_menu .pagCorrente {
     padding-top:0.5em;
     padding-bottom: 0.5em;
+  }
+
+  #nav_menu .pagCorrente a{
+    margin: 0em;
   }
 }
 #navbar .pagCorrente a{
@@ -157,9 +171,17 @@ h2 {
 /*--------------------------- CHI SIAMO ---------------------------------*/
 
 #content .hide {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#content .hide-block {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+  display:inline-block;
+  font-size: 1px;
 }
 
 #content .flex-container {
@@ -179,7 +201,7 @@ h2 {
 
 #content .flex-container .flex-txt {
   width: 70%;
-  margin: 1em;
+  margin-right: 1em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
@@ -190,12 +212,6 @@ h2 {
   height: 0%;
 }
 
-.group-member{
-  padding:0%;
-  margin: 1.5em;
-  margin-top: 2em;
-  margin-bottom: 0em;
-}
 .img-samuele {
   background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
 }
@@ -211,9 +227,9 @@ h2 {
   margin-block-end: .83em;
   margin: 0;
   padding: 1em;
-  padding-right: 25%;
-  padding-left: 25%;
+  
 }
+
 @media only screen and (max-width: 480px) {
   #content .flex-container {
     flex-direction: column;
@@ -227,6 +243,9 @@ h2 {
 
   #content .flex-container .flex-txt{
     width: auto;
+    margin: 0em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
   }
 
   #content .flex-container .desk{
@@ -239,289 +258,271 @@ h2 {
   #content .flex-container .mobile{
     visibility: visible;
   }
+
+  .group-member{
+    border-top: 1px groove #737373;
+    text-align: center;
+  }
 }
-  /*--------------------------- CONTATTI ---------------------------------*/
-  .contatti ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    padding-top: 0.75em;
-  }
-  .contatti li {
-    font-size: 1.35em;
-    margin: 0;
-    line-height: 1.3em;
-  }
-  .contatti legend {
-    margin: auto;
-    font-size: 1.2em;
-  }
-  .contatti,
-  form {
-    margin-bottom: 1em;
-  }
-  .contatti fieldset {
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    margin: auto;
-    font-size: 1.1em;
-    border-radius: 5px;
-  }
-  .contatti label {
-    text-align: center;
-    margin-left: 0.75em;
-  }
-  .contatti input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #383232;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  .contatti input[type="submit"] {
-    width: 100%;
-    background-color: #93b66b;
-    padding: 0.75em;
-    font-size: 1em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .contatti input[type="submit"]:hover {
-    background-color: #64be69;
-  }
-  .contatti .input {
-    padding: 0.6em 0.5em 0.5em 0.5em;
-  }
-  /*-------------------------------- LOGIN --------------------------------*/
 
-  .login fieldset {
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    width: 20%;
-    margin: auto;
-    font-size: 1.1em;
-    border-radius: 5px;
-  }
-  .login label {
-    text-align: center;
-    margin-left: 0.75em;
-  }
-  .login input[type="text"], input[type="password"]{
-    border: 1px solid #383232;
-  }
+/*--------------------------- CONTATTI ---------------------------------*/
+.contatti ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 0.75em;
+}
+.contatti li {
+  font-size: 1.35em;
+  margin: 0;
+  line-height: 1.3em;
+}
+.contatti legend {
+  margin: auto;
+  font-size: 1.2em;
+}
+.contatti,
+form {
+  margin-bottom: 1em;
+}
+.contatti fieldset {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin: auto;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+.contatti label {
+  text-align: center;
+  margin-left: 0.75em;
+}
+.contatti input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75em;
+  border: 1px solid #383232;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.contatti input[type="submit"] {
+  width: 100%;
+  background-color: #93b66b;
+  padding: 0.75em;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contatti input[type="submit"]:hover {
+  background-color: #64be69;
+}
+.contatti .input {
+  padding: 0.6em 0.5em 0.5em 0.5em;
+}
+/*-------------------------------- LOGIN --------------------------------*/
 
-  .login .input {
-    padding: 0.6em 0.5em 0.5em 0.5em;
-  }
+.login fieldset {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  width: 20%;
+  margin: auto;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+.login label {
+  text-align: center;
+  margin-left: 0.75em;
+}
+.login input[type="text"], input[type="password"]{
+  border: 1px solid #383232;
+}
 
-  /*-------------------------------- TABELLA --------------------------------*/
-  .table {
-    border-collapse: collapse;
-    margin: auto;
-    font-size: 1.45em;
-    min-width: 400px;
+.login .input {
+  padding: 0.6em 0.5em 0.5em 0.5em;
+}
+
+/*-------------------------------- TABELLA --------------------------------*/
+.table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 1.45em;
+  background-color: #f3efe8;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+.table caption {
+  padding-top: 0.5em;
+}
+.table thead tr,
+.table caption {
+  background-color: #383232;
+  color: #f3efe8;
+  text-align: center;
+  font-size: 1.1em;
+}
+.table th,
+.table td {
+  padding: 12px 15px;
+}
+.table tbody tr {
+  border-bottom: 1px solid #383232;
+}
+.table tbody tr:nth-last-of-type(even) {
+  background-color: #f3eddd;
+}
+@media only screen and (max-width: 680px){
+  thead, tfoot{
+    display: none;
+  }
+  td[data-title]:before{
+    content: attr(data-title) "\00A0:\00A0";
+  }
+  tr, td,th{
+    display: block;/*per farli andare a capo*/
+  }
+  th{
     background-color: #f3efe8;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
+    color: white;
   }
-  .table caption {
-    padding-top: 0.5em;
+  table, tbody, tr, th, td{
+    border: none;
   }
-  .table thead tr,
-  .table caption {
-    background-color: #383232;
-    color: #f3efe8;
-    text-align: center;
-    font-size: 1.1em;
+  th,td{
+    border: 1.5px solid #000;
+    border-top: none;
   }
-  .table th,
-  .table td {
-    padding: 12px 15px;
+  tr:first-child{
+    border-top: 1px solid #000;
   }
-  .table tbody tr {
-    border-bottom: 1px solid #383232;
-  }
-  .table tbody tr:nth-last-of-type(even) {
-    background-color: #f3eddd;
-  }
-  @media only screen and (max-width: 480px){
-    thead, tfoot{
-      display: none;
-    }
-    td[data-title]:before{
-      content: attr(data-title) "\00A0:\00A0";
-    }
-    tr, td,th{
-      display: block;/*per farli andare a capo*/
-    }
-    th{
-      background-color: #f3efe8;
-      color: white;
-    }
-    table, tbody, tr, th, td{
-      border: none;
-    }
-    th,td{
-      border: 1.5px solid #000;
-      border-top: none;
-    }
-    tr:first-child{
-      border-top: 1px solid #000;
-    }
-  }
-  /*-------------------------------- FOOTER --------------------------------*/
+}
+/*-------------------------------- FOOTER --------------------------------*/
 
-  #footer {
-    background-color: #383232;
-    height: auto;
-  }
-  #footer p {
-    color: #f3efe8;
-    font-size: 1.3em;
-    padding: 0.5em;
-    text-align: center;
-    line-height: 2em;
-  }
-  #footer fieldset{
-    color: #f3efe8;
-  }
-  .linkFooter {
-    color: cyan;
-  }
+#footer {
+  background-color: #383232;
+  height: auto;
+}
+#footer p {
+  color: #f3efe8;
+  font-size: 1.3em;
+  padding: 0.5em;
+  text-align: center;
+  line-height: 2em;
+}
+#footer fieldset{
+  color: #f3efe8;
+}
+.linkFooter {
+  color: cyan;
+}
 
-  /*-------------------------------- RECENSIONI --------------------------------*/
+/*-------------------------------- RECENSIONI --------------------------------*/
 
-  /*#recensioni-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding-right: 5%;
-  padding-left: 5%;
-  justify-content: space-between;
-  gap: 0.5em;
-  }*/
-  .recensioni{
-    list-style-type: none;
-    padding-inline-start: 0px;
-  }
+#recensioni{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
 
-  .recensioni .flex-container {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
+#content #recensioni .flex-container {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
-  .recensioni .flex-container p {
-    word-wrap: break-word;
-  }
+#content #recensioni .flex-container p {
+  word-wrap: break-word;
+}
 
-  .recensioni .flex-container .hide{
-    text-indent: 150%;
-  }
+#content #recensioni h1{
+  padding:0%;
+  margin: 0.3em;
+}
 
-  .recensioni h1{
-    padding:0%;
-    margin: 0.3em;
-  }
+#content #recensioni h2{
+  padding:0%;
+  margin: 0em;
+  text-indent: 0.3em;
+}
 
-  .recensioni h2{
-    padding:0%;
-    margin: 0em;
-    text-indent: 0.3em;
-  }
+.img-onepiece {
+  background-image: url("../images/onepiece.jpg");
+}
 
-  .img-onepiece {
-    background-image: url("../images/onepiece.jpg");
-  }
+.img-onepiece {
+  background-image: url("../images/onepiece.jpg");
+}
 
-  .img-onepiece {
-    background-image: url("../images/onepiece.jpg");
-  }
+.img-detectiveconan {
+  background-image: url("../images/detectiveconan.jpg");
+}
 
-  .img-detectiveconan {
-    background-image: url("../images/detectiveconan.jpg");
-  }
+.img-fullmetalalchemist {
+  background-image: url("../images/fullmetalalchemist.jpg");
+}
 
-  .img-fullmetalalchemist {
-    background-image: url("../images/fullmetalalchemist.jpg");
-  }
+.img-gintama {
+  background-image: url("../images/gintama.jpg");
+}
 
-  .img-gintama {
-    background-image: url("../images/gintama.jpg");
-  }
+.img-hunterxhunter {
+  background-image: url("../images/hunterxhunter.jpg");
+}
 
-  .img-hunterxhunter {
-    background-image: url("../images/hunterxhunter.jpg");
-  }
+.img-steinsgate {
+  background-image: url("../images/steinsgate.jpg");
+}
 
-  .img-steinsgate {
-    background-image: url("../images/steinsgate.jpg");
-  }
+.img-berserk {
+  background-image: url("../images/berserk.jpg");
+}
+#content #recensioni .flex-container .flex-txt{
+  margin-left: 1em;
+  margin-right: 0em;
+}
 
-  .img-berserk {
-    background-image: url("../images/berserk.jpg");
-  }
-
-  .recensioni-item {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    max-width: 25em;
-    flex-grow: 2;
-  }
-
-  .recensioni-image {
-    display: flex;
-    max-height: 14em;
-    max-width: 11em;
-  }
-
-  .recensioni-content {
-    display: flex;
+@media only screen and (max-width: 480px) {
+  #content #recensioni .flex-container {
+    flex-wrap: wrap;
     flex-direction: column;
+    border-top: 1px groove #737373;
+    margin-bottom: 1em;
+    padding-top: 1em;
+  }
+
+  #content #recensioni .flex-container .flex-img{
+    padding: 0%;
+    padding-top: 100%;
     width: 100%;
-    min-width: 0;
+
   }
 
-  #recensioni-container .recensioni-content > * {
-    padding: 0 0 0 1em;
-    word-wrap: break-word;
+  #content #recensioni .flex-container .flex-txt{
+    margin: 0em;
+    margin-top: 0.7em;
+    padding: 0%;
+    width: auto;
   }
+}
 
-  @media only screen and (max-width: 480px) {
-    #recensioni.flex-container {
-      flex-wrap: wrap;
-      flex-direction: column;
-      /*border-bottom: 1px groove #737373;*/
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-    /*#recensioni-container {
-    padding: 0;*/
-    #recensioni .flex-container .flex-img{
-      padding: 0%;
-      padding-top: 100%;
-      width: 100%;
+.assistive-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+/*-------------------------------- RECENSIONI --------------------------------*/
+.erroriJS{
+  color: red;
+}
 
-    }
+#content .recensione h1,
+h2 {
+  margin: 0;
+  padding: 0.5em;
+}
 
-    #recensioni .flex-container .flex-txt{
-      padding: 0%;
-      width: 100%;
-    }
-  }
-
-  .assistive-text {
-    height: 1px;
-    width: 1px;
-    position: absolute;
-    overflow: hidden;
-    top: -10px;
-  }
-  /*-------------------------------- RECENSIONI --------------------------------*/
-  .erroriJS{
-    color: red;
-  }
+.img-recensione{
+  width: 100%;
+}

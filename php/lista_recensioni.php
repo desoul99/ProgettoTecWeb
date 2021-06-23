@@ -64,7 +64,7 @@ if($listaRecensioni){
 
 $aiutiLettere = '';
 foreach($lettere as $lettera => $value){
-    $aiutiLettere .= '<a class="hide" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a> ';
+    $aiutiLettere .= '<a class="hide-block" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a> ';
 }
 
 
