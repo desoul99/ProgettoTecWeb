@@ -49,7 +49,6 @@ if (empty($nome)) {
 
 	} else {
 		$msg = 'Errore nella rimozione. Riprovare o contattare un amministratore. %s';
-		createSession($username);
 	}
 }
 
