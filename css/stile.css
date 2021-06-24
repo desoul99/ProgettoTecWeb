@@ -582,15 +582,43 @@ input[type="password"] {
   overflow: hidden;
   top: -10px;
 }
-/*-------------------------------- RECENSIONI --------------------------------*/
+/*-------------------------------- RECENSIONE --------------------------------*/
 .erroriJS{
   color: red;
 }
 
-#content .recensione h1,
-h2 {
+#content .recensione h1 {
+	margin-left:1em;
+    padding: 0em;
+	text-align: center;
+}
+
+#content .recensione h2 {
   margin: 0;
   padding: 0.5em;
+}
+
+
+.recensione dl.metadati {
+  padding-left: 2em;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 80%
+  overflow: visible;
+}
+.recensione dl.metadati dt {
+  flex: 0 0 25%;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.recensione dl.metadati dd {
+  margin-left: auto;
+  align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 0 0 70%
 }
 
 .img-recensione {
