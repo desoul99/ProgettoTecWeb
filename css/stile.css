@@ -30,7 +30,7 @@ p{
 
 /*-------------------------------- BREADCRUMB --------------------------------*/
 
-#breadcrumb {
+#breadcrumb h2{
   background-color: #383232;
   color: #f3efe8;
   font-size: 1.2em;
@@ -591,10 +591,10 @@ input[type="password"] {
   color: red;
 }
 
-#content .recensione h1,
-h2 {
+#content .recensione h2, h3 {
   margin: 0;
-  padding: 0.5em;
+  padding: 0em;
+  display: inline;
 }
 
 .img-recensione {
