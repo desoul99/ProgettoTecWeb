@@ -33,13 +33,13 @@ p{
 #breadcrumb {
   background-color: #383232;
   color: #f3efe8;
-  
+  font-size: 1.2em;
   padding: 0.25em;
 }
 
 @media only screen and (max-width: 480px) {
   #breadcrumb {
-    font-size: 1em;
+    font-size: 1.1em;
     padding: 0.7em;
   }
 }
@@ -208,6 +208,7 @@ h2 {
 
 #content .flex-container {
 	display: flex;
+  flex-direction: row;
 	flex-wrap: nowrap;
 	margin-top: 0.5em;
 }
@@ -221,22 +222,34 @@ h2 {
 	margin: 0%;
 }
 
+.flex-sx {
+  order: 1;
+}
+
+.flex-dx {
+  order: 2;
+}
+
 #content .flex-container .flex-txt {
   width: 70%;
-  margin-right: 1em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-#content .flex-container .mobile {
-	visibility: hidden;
-	padding: 0%;
-	width: 0%;
-	height: 0%;
+#content .flex-container .flex-txt.flex-sx {
+  margin-right: 1em;
+}
+
+#content .flex-container .flex-txt.flex-dx {
+  margin-left: 1em;
 }
 
 .img-samuele {
 	background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
+}
+
+.img-lorenzo {
+	background-image: url("../images/lorenzo.jpeg");
 }
 
 .img-marco {
@@ -259,27 +272,18 @@ h2 {
   }
 
   #content .flex-container .flex-img {
+    order: 1;
     width: auto;
     background-size: contain;
     padding-top: 100%;
   }
 
   #content .flex-container .flex-txt {
+    order: 2;
     width: auto;
     margin: 0em;
     margin-top: 0.7em;
     margin-bottom: 0.7em;
-  }
-
-  #content .flex-container .desk {
-    visibility: hidden;
-    padding-top: 0%;
-    padding: 0%;
-    margin: 0%;
-  }
-
-  #content .flex-container .mobile {
-    visibility: visible;
   }
 
   .group-member {
