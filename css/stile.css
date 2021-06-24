@@ -618,7 +618,7 @@ dl.metadati {
   overflow: visible;
 }
 dl.metadati dt {
-  flex: 0 0 40%;
+  flex: 0 0 5em;
   text-align: left;
   overflow: hidden;
   font-size: 1.45em;
@@ -634,13 +634,13 @@ dl.metadati dd {
 
 .recensione dl.metadati {
   padding-left: 2em;
-  width: 80%;
+  width: 100%;
 }
 .recensione dl.metadati dt {
-  flex: 0 0 25%;
+  flex: 0 0 5em;
 }
 .recensione dl.metadati dd {
-  flex: 0 0 70%
+  flex: 0 0 60
 }
 
 .img-recensione {
