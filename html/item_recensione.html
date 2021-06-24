@@ -4,10 +4,17 @@
             recensione completa di {{titolo}}</a>
     <div class="flex-txt">
         <h2>{{titolo}}</h2>
-        <h3>di {{autore_opera}}</h3>
-        <p>Voto: {{voto}}</p>
-        <p>Testo: {{testo}}...</p>
-        <a href="recensione.php?nome={{nome_recensione}}">Vai alla recensione completa</a>
+            <dl class="metadati">
+            <dt><h3>Autore:</h3></dt>
+            <dd><h3>{{autore_opera}}</h3></dd>
+            <dt><h3>Tipo:</h3></dt>
+            <dd><h3>{{tipo}}</h3></dd>
+            <dt><h3>Recensore:</h3></dt>
+            <dd><h3>{{autore}}</h3></dd>
+            <dt><h3>Voto:</h3></dt>
+            <dd><h3>{{voto}}</h3></dd>
+        </dl>
+        <p>{{testo}}...</p><a href="recensione.php?nome={{nome_recensione}}">Vai alla recensione completa</a>
         {{opzioniRecensore}}
     </div>
     </div>

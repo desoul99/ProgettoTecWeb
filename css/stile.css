@@ -591,37 +591,43 @@ input[type="password"] {
   color: red;
 }
 
-#content .recensione h1 {
-	margin-left:1em;
-    padding: 0em;
-	text-align: center;
-}
-
 #content .recensione h2 {
-  margin: 0;
-  padding: 0.5em;
+	margin-left:1em;
+  padding: 0em;
+	text-align: center;
+  font-size: 2em;
+  padding-bottom: 0.5em;
 }
 
-
-.recensione dl.metadati {
-  padding-left: 2em;
+dl.metadati {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  width: 80%
+  width: 100%;
   overflow: visible;
 }
-.recensione dl.metadati dt {
-  flex: 0 0 25%;
+dl.metadati dt {
+  flex: 0 0 20%;
   text-align: right;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.recensione dl.metadati dd {
+dl.metadati dd {
   margin-left: auto;
-  align: left;
+  text-align: left;
   text-overflow: ellipsis;
   overflow: hidden;
+  flex: 0 0 75%
+}
+
+.recensione dl.metadati {
+  padding-left: 2em;
+  width: 80%;
+}
+.recensione dl.metadati dt {
+  flex: 0 0 25%;
+}
+.recensione dl.metadati dd {
   flex: 0 0 70%
 }
 
@@ -634,5 +640,20 @@ input[type="password"] {
   .img-recensione {
     float: none;
     width: 100%;
+  }
+
+  .recensione dl.metadati {
+    padding: 0em;
+  }
+
+  #content .recensione h2 {
+    margin: 0em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+  }
+
+  .img-recensione {
+    float: left;
+    margin: 0em;
   }
 }
