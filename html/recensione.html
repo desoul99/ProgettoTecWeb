@@ -1,9 +1,36 @@
-<img src="../images/{{immagine}}" alt="{{alt_immagine}}" class="img-recensione"/>
 <div class="recensione">
-<h1>{{titolo}}</h1>
-<h5>{{autore_opera}}</h5>
-<p>{{voto}}</p>
+<div class="flex-container">
+<img src="../images/{{immagine}}" alt="{{alt_immagine}}" class="img-recensione"/>
+<div>
+<p><h1>{{titolo}}</h1></p>
+<dl class="metadati">
+
+		<dt><h4>Autore:</h4></dt>
+		<dd><h4>{{autore_opera}}</h4></dd>
+		</br>
+		
+		<dt><h4>Tipo:</h4></dt>
+		<dd><h4>{{tipo}}</h4></dd>
+		</br>
+		
+		<dt><h4>Tags:</h4></dt>
+		<dd><h4>{{tags}}</h4></dd>
+		</br>
+		
+		<dt><h4>Recensore:</h4></dt>
+		<dd><h4>{{autore}}</h4></dd>
+		</br>
+		
+		<dt><h4>Voto:</h4></dt>
+		<dd><h4>{{voto}}</h4></dd>
+
+
+</dl>
+
+</div>
+</div>
 <p>{{testo}}</p>
 </div>
+
 <a href="#content">Torna su</a>
 
