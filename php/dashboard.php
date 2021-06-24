@@ -26,6 +26,7 @@ $DBConnection->closeDBConnection();
 if($listaContatti){
     $contatti = '';
     foreach($listaContatti as $singleContatto){
+        $singleContatto['rimuoviContatto'] = 'rimuovi_contatto.php?email='.$singleContatto['email'].'&time='.urlencode($singleContatto['data']);
         $contatti .= Utils::template($singleContatto, $templateContatto);
     }
 }else{

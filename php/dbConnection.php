@@ -51,6 +51,12 @@ class DBAccess{
     }
   }
 
+  public function removeContatto($email, $time){
+    $query = sprintf("DELETE FROM contatto WHERE email = '%s' AND data = '%s'", mysqli_real_escape_string($this->connection, $email), mysqli_real_escape_string($this->connection, $time));
+    echo $query;
+    return mysqli_query($this->connection, $query);
+  }
+
   public function removeRecensione($nome){
     $query = sprintf("DELETE FROM recensioni WHERE nome_recensione = '%s'", mysqli_real_escape_string($this->connection, $nome));
     return mysqli_query($this->connection, $query);
