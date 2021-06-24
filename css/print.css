@@ -1,6 +1,8 @@
 *{
   padding: 0em;
   margin: 0;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
 }
 html{
   font-family: Georgia, "Times New Roman", serif;/* con grazia */
@@ -24,6 +26,9 @@ html{
 .btn-menu{
   display: none;
 }
+.linkaiuto{
+  display: none;
+}
 /*-------------------------------- CONTENUTO --------------------------------*/
 #content p{
   margin-top: 1em;
@@ -40,6 +45,104 @@ html{
 .login{
   display: none;
 }
+
+#content .hide {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#content .hide-block {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display:inline-block;
+  font-size: 1px;
+}
+
+#content .flex-container {
+	display: flex;
+  flex-direction: row;
+	flex-wrap: nowrap;
+	margin-top: 0.5em;
+}
+
+#content .flex-container .flex-img {
+	width: 25%;
+	padding: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0%;
+}
+
+.flex-sx {
+  order: 1;
+}
+
+.flex-dx {
+  order: 2;
+}
+
+#content .flex-container .flex-txt {
+  width: 70%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#content .flex-container .flex-txt.flex-sx {
+  margin-right: 1em;
+}
+
+#content .flex-container .flex-txt.flex-dx {
+  margin-left: 1em;
+}
+
+#content .flex-container .flex-img {
+  order: 1;
+  width: auto;
+  background-size: contain;
+  break-inside: avoid;
+}
+
+#content .flex-container .flex-txt {
+  order: 2;
+  width: auto;
+  margin: 0em;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+#recensioni {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+#content #recensioni .flex-container {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#content #recensioni .flex-container p {
+  word-wrap: break-word;
+}
+
+#content #recensioni h1 {
+  padding:0%;
+  margin: 0.3em;
+}
+
+#content #recensioni h2 {
+  padding:0%;
+  margin: 0em;
+  text-indent: 0.3em;
+}
+
+#content #recensioni .flex-container .flex-txt{
+  margin-left: 1em;
+  margin-right: 0em;
+}
+
 
 /*IMMAGINI*/
 

@@ -26,11 +26,11 @@ $DBConnection->closeDBConnection();
 if($listaContatti){
     $contatti = '';
     foreach($listaContatti as $singleContatto){
-        $singleContatto['rimuoviContatto'] = 'rimuovi_contatto.php?email='.$singleContatto['email'].'&time='.urlencode($singleContatto['data']);
+        $singleContatto['rimuoviContatto'] = 'rimuovi_contatto.php?email='.$singleContatto['email'].'&amp;time='.urlencode($singleContatto['data']);
         $contatti .= Utils::template($singleContatto, $templateContatto);
     }
 }else{
-    $contatti = "<h2>Nessun messaggio di contatto presente nel sistema.</h2>";
+    $contatti = "<li><h2>Nessun messaggio di contatto presente nel sistema.</h2></li>";
 }
 
 $pageContent = Utils::template(array('currentPage' => 'dashboard.php'),file_get_contents('../html/signup_form.html'));

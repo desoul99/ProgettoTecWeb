@@ -17,7 +17,7 @@ if(!checkLogin()){
 }else{
     $loginSection = '';
     $navBar = navbar('Recensioni', false, true);
-    $aggiuntaRecensione = '<a href="aggiungi_recensione.php">Aggiungi recensione</a>';
+    $aggiuntaRecensione = '<a class="linkaiuto" href="aggiungi_recensione.php">Aggiungi recensione</a>';
     $isRecensore = true;
 }
 
@@ -41,7 +41,7 @@ if($listaRecensioni){
         $singleRecensione['titolo'] = $singleRecensione['titolo_inglese'] ? '<span xml:lang="en">'.$singleRecensione['titolo'].'</span>' : $singleRecensione['titolo'];
         $singleRecensione['immagine'] = explode('.',$singleRecensione['immagine'])[0];
         if($isRecensore){
-            $singleRecensione['opzioniRecensore'] = '<a class="rimuovi-recensione" href="rimuovi_recensione.php?nome={{nome_recensione}}">Rimuovi recensione</a>'.PHP_EOL.'<a class="modifica-recensione" href="modifica_recensione.php?nome={{nome_recensione}}">Modifica recensione</a>';
+            $singleRecensione['opzioniRecensore'] = '<a class="rimuovi-recensione linkaiuto" href="rimuovi_recensione.php?nome={{nome_recensione}}">Rimuovi recensione</a>'.PHP_EOL.'<a class="modifica-recensione linkaiuto" href="modifica_recensione.php?nome={{nome_recensione}}">Modifica recensione</a>';
             $singleRecensione['opzioniRecensore'] = Utils::template($singleRecensione, $singleRecensione['opzioniRecensore']);
         }else{
             $singleRecensione['opzioniRecensore'] = '';

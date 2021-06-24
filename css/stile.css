@@ -10,6 +10,15 @@ p{
   text-align: justify;
 }
 
+dt {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+dd {
+  font-size: 1.1em;
+}
+
 /*-------------------------------- HEADER --------------------------------*/
 
 #header {
@@ -33,7 +42,7 @@ p{
 #breadcrumb {
   background-color: #383232;
   color: #f3efe8;
-  font-size: 1.2em;
+  font-size: 1.6em;
   padding: 0.25em;
 }
 
@@ -260,8 +269,6 @@ h2 {
   display: block;
   font-size: 1.5em;
   font-weight: bold;
-  margin-block-start: .83em;
-  margin-block-end: .83em;
   margin: 0;
   padding: 1em;
 }
@@ -357,6 +364,11 @@ textarea {
 .contatti .input {
   padding: 0.6em 0.5em 0.5em 0.5em;
 }
+
+#lista-contatti .flex-txt {
+  padding-bottom: 2em;
+}
+
 
 /*-------------------------------- LOGIN --------------------------------*/
 
@@ -487,26 +499,25 @@ input[type="password"] {
 
 /*-------------------------------- RECENSIONI --------------------------------*/
 
-#recensioni {
+.recensioni {
   list-style-type: none;
-  padding-inline-start: 0px;
 }
 
-#content #recensioni .flex-container {
+#content .recensioni .flex-container {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-#content #recensioni .flex-container p {
+#content .recensioni .flex-container p {
   word-wrap: break-word;
 }
 
-#content #recensioni h1 {
+#content .recensioni h1 {
   padding:0%;
   margin: 0.3em;
 }
 
-#content #recensioni h2 {
+#content .recensioni h2 {
   padding:0%;
   margin: 0em;
   text-indent: 0.3em;
@@ -550,13 +561,13 @@ input[type="password"] {
   background-image: url("../images/oyasumipunpun.jpg");
 }
 
-#content #recensioni .flex-container .flex-txt{
+#content .recensioni .flex-container .flex-txt{
   margin-left: 1em;
   margin-right: 0em;
 }
 
 @media only screen and (max-width: 480px) {
-  #content #recensioni .flex-container {
+  #content .recensioni .flex-container {
     flex-wrap: wrap;
     flex-direction: column;
     border-top: 1px groove #737373;
@@ -564,14 +575,14 @@ input[type="password"] {
     padding-top: 1em;
   }
 
-  #content #recensioni .flex-container .flex-img{
+  #content .recensioni .flex-container .flex-img{
     padding: 0%;
     padding-top: 100%;
     width: 100%;
 
   }
 
-  #content #recensioni .flex-container .flex-txt{
+  #content .recensioni .flex-container .flex-txt{
     margin: 0em;
     margin-top: 0.7em;
     padding: 0%;
@@ -607,17 +618,18 @@ dl.metadati {
   overflow: visible;
 }
 dl.metadati dt {
-  flex: 0 0 20%;
-  text-align: right;
-  text-overflow: ellipsis;
+  flex: 0 0 40%;
+  text-align: left;
   overflow: hidden;
+  font-size: 1.45em;
 }
 dl.metadati dd {
   margin-left: auto;
   text-align: left;
-  text-overflow: ellipsis;
   overflow: hidden;
-  flex: 0 0 75%
+  flex: 0 0 60%;
+  font-size: 1.4em;
+  justify-content: space-around;
 }
 
 .recensione dl.metadati {
