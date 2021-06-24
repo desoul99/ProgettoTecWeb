@@ -64,8 +64,8 @@ $replacements = array(
     'navBar' => $navBar,
     'pageContent' => $pageContent,
     'login' => $loginSection,
-    'scripts' => '',
-    'bodyOptions' => '',
+    'scripts' => '<script type="text/javascript" src="../js/controllo.js"></script>',
+    'bodyOptions' => ''
 );
 
 

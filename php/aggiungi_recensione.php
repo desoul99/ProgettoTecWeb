@@ -59,7 +59,7 @@ $replacements = array(
     'navBar' => $navBar,
     'pageContent' => $pageContent,
     'login' => $loginSection,
-    'scripts' => '',
+    'scripts' => '<script type="text/javascript" src="../js/controllo.js"></script>',
     'bodyOptions' => ''
 );
 

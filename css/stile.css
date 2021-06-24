@@ -253,7 +253,7 @@ h2 {
 }
 
 .img-marco {
-	background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
+	background-image: url("../images/marco.jpg");
 }
 
 .group-member {
@@ -515,7 +515,7 @@ input[type="password"] {
 /*IMMAGINI*/
 
 .img-vagabond {
-	background-image: url("../images/vagabond.jpg");
+  background-image: url("../images/vagabond.jpg");
 }
 
 .img-onepiece {
@@ -547,7 +547,7 @@ input[type="password"] {
 }
 
 .img-oyasumipunpun {
-	background-image: url("../images/oyasumipunpun.jpg");
+  background-image: url("../images/oyasumipunpun.jpg");
 }
 
 #content #recensioni .flex-container .flex-txt{

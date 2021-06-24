@@ -3,7 +3,7 @@ require_once('utils.php');
 require_once('navbar.php');
 require_once('session.php');
 
-$template = file_get_contents('../html/template.html');
+$template = file_get_contents('../html/html5template.html');
 $pageContent = file_get_contents('../html/uscite.html');
 
 if(!checkLogin()){
@@ -29,5 +29,6 @@ $replacements = array(
 );
 
 
-echo Utils::template($replacements, $template);
+$pageContent = Utils::template($replacements, $template);
+echo str_replace('xml:lang', 'lang', $pageContent);
 ?>
