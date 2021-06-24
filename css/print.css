@@ -36,3 +36,45 @@ html{
   font-size: 0.7em;
   border-bottom: 1px solid #ddd;
 }
+
+.login{
+  display: none;
+}
+
+/*IMMAGINI*/
+
+.img-vagabond {
+  background-image: url("../images/vagabond.jpg");
+}
+
+.img-onepiece {
+  background-image: url("../images/onepiece.jpg");
+}
+
+.img-detectiveconan {
+  background-image: url("../images/detectiveconan.jpg");
+}
+
+.img-fullmetalalchemist {
+  background-image: url("../images/fullmetalalchemist.jpg");
+}
+
+.img-gintama {
+  background-image: url("../images/gintama.jpg");
+}
+
+.img-hunterxhunter {
+  background-image: url("../images/hunterxhunter.jpg");
+}
+
+.img-steinsgate {
+  background-image: url("../images/steinsgate.jpg");
+}
+
+.img-berserk {
+  background-image: url("../images/berserk.jpg");
+}
+
+.img-oyasumipunpun {
+  background-image: url("../images/oyasumipunpun.jpg");
+}

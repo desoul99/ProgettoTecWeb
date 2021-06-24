@@ -151,6 +151,38 @@ if($_POST['submit'] === 'Modifica' && $_FILES['immagine']['error'] === 0 && $imm
     error_reporting(-1);
 }
 
+if(strlen($immagine) >0){
+
+$immagine = explode('.', $immagine);
+$old_immagine = explode('.', $old_immagine);
+
+$cssImage = <<<EOD
+/*IMMAGINI*/
+
+.img-$immagine[0] {
+  background-image: url("../images/$immagine[0].$immagine[1]");
+}
+EOD;
+
+$cssoldImage = <<<EOD
+
+.img-$old_immagine[0] {
+  background-image: url("../images/$old_immagine[0].$old_immagine[1]");
+}
+
+EOD;
+
+$cssFile1 = file_get_contents('../css/stile.css');
+$cssFile2 = file_get_contents('../css/print.css');
+$cssFile1 = str_replace($cssoldImage, '', $cssFile1);
+$cssFile1 = str_replace("/*IMMAGINI*/", $cssImage, $cssFile1);
+$cssFile2 = str_replace($cssoldImage, '', $cssFile2);
+$cssFile2 = str_replace("/*IMMAGINI*/", $cssImage, $cssFile2);
+
+file_put_contents('../css/stile.css', $cssFile1);
+file_put_contents('../css/print.css', $cssFile2);
+
+}
 if($_POST['submit'] === 'Modifica'){
     $msg = "Recensione modificata con successo. %s";
 }else{
