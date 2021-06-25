@@ -16,7 +16,7 @@ dt {
 }
 
 dd {
-  font-size: 1.1em;
+
 }
 
 /*-------------------------------- HEADER --------------------------------*/
@@ -154,7 +154,7 @@ dd {
 }
 
 #content p {
-	font-size: 1.45em;
+	font-size: 1.25em;
 	margin: 0;
 	line-height: 1.3em;
 	margin-bottom: 0.5em;
@@ -164,8 +164,17 @@ dd {
 #content h1,
 h2 {
 	background-color: #f3efe8;
-	margin: 0;
-	padding: 1em;
+	margin: 1em;
+}
+
+a.linktornasu {
+  text-decoration: none;
+  margin-top: 10em;
+  margin-bottom: 0.5em;
+}
+
+a.linkaiuto {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -208,11 +217,11 @@ h2 {
 }
 
 #content .hide-block {
-  text-indent: 100%;
-  white-space: nowrap;
+  position: absolute;
+  height: 1px;
+  width: 1px;
   overflow: hidden;
-  display:inline-block;
-  font-size: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 #content .flex-container {
@@ -269,13 +278,13 @@ h2 {
   display: block;
   font-size: 1.5em;
   font-weight: bold;
-  margin: 0;
-  padding: 1em;
+  margin: 1em;
 }
 
 @media only screen and (max-width: 480px) {
   #content .flex-container {
     flex-direction: column;
+    border-bottom: 1px groove #737373;
   }
 
   #content .flex-container .flex-img {
@@ -284,11 +293,15 @@ h2 {
     background-size: contain;
     padding-top: 100%;
   }
-
+  #content .flex-container .flex-txt.flex-sx {
+    margin-right: 0em;
+  }
+  #content .flex-container .flex-txt.flex-dx {
+    margin-left: 0em;
+  }
   #content .flex-container .flex-txt {
     order: 2;
     width: auto;
-    margin: 0em;
     margin-top: 0.7em;
     margin-bottom: 0.7em;
   }
@@ -297,6 +310,7 @@ h2 {
     border-top: 1px groove #737373;
     text-align: center;
   }
+
 }
 
 /*--------------------------- CONTATTI ---------------------------------*/
@@ -309,7 +323,7 @@ h2 {
 }
 
 .contatti li {
-  font-size: 1.35em;
+  font-size: 1.25em;
   margin: 0;
   line-height: 1.3em;
 }
@@ -501,6 +515,8 @@ input[type="password"] {
 
 .recensioni {
   list-style-type: none;
+  margin: 0em;
+  padding: 0em;
 }
 
 #content .recensioni .flex-container {
@@ -571,6 +587,7 @@ input[type="password"] {
     flex-wrap: wrap;
     flex-direction: column;
     border-top: 1px groove #737373;
+    border-bottom: 1px groove #737373;
     margin-bottom: 1em;
     padding-top: 1em;
   }
@@ -602,6 +619,17 @@ input[type="password"] {
   color: red;
 }
 
+ul.recensioni {
+
+}
+
+h3.capitoli {
+  margin-left: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
 #content .recensione h2 {
 	margin-left:1em;
   padding: 0em;
@@ -616,25 +644,25 @@ dl.metadati {
   flex-wrap: wrap;
   width: 100%;
   overflow: visible;
+  margin-right: 0em;
 }
 dl.metadati dt {
   flex: 0 0 40%;
   text-align: left;
   overflow: hidden;
-  font-size: 1.45em;
+  font-size: 1.3em;
 }
 dl.metadati dd {
   margin-left: auto;
   text-align: left;
   overflow: hidden;
   flex: 0 0 60%;
-  font-size: 1.4em;
   justify-content: space-around;
+  font-size: 1.3em;
 }
-
 .recensione dl.metadati {
-  padding-left: 2em;
-  width: 80%;
+  padding-left: 5%;
+  width: 95%;
 }
 .recensione dl.metadati dt {
   flex: 0 0 25%;
@@ -648,6 +676,28 @@ dl.metadati dd {
   margin: 0.8em;
 }
 
+div.dati {
+  width: 100%;
+}
+
+@media only screen and (max-width: 880px) {
+  .recensione dl.metadati dt {
+    flex: 0 0 40%;
+  }
+  .recensione dl.metadati dd {
+    flex: 0 0 55%
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .recensione dl.metadati {
+    flex-flow: column;
+  }
+  .recensione dl.metadati dd {
+    margin-left: 10%;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .img-recensione {
     float: none;
@@ -656,8 +706,14 @@ dl.metadati dd {
 
   .recensione dl.metadati {
     padding: 0em;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
   }
-
+  .recensione dl.metadati dd {
+    margin-left: auto;
+  }
+}
   #content .recensione h2 {
     margin: 0em;
     padding-bottom: 0.5em;
@@ -668,4 +724,57 @@ dl.metadati dd {
     float: left;
     margin: 0em;
   }
+}
+
+/*DASHBOARD*/
+
+.signup {
+  margin-bottom: 1em;
+}
+
+.signup fieldset {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin: auto;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.signup legend {
+  margin: auto;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.signup label {
+  text-align: center;
+  margin-left: 0.75em;
+}
+
+.signup input[type="text"],
+.signup input[type="password"],
+.signup textarea {
+  width: 100%;
+  padding: 0.75em;
+  border: 1px solid #383232;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signup input[type="submit"] {
+  width: 100%;
+  background-color: #93b66b;
+  padding: 0.75em;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup input[type="submit"]:hover {
+  background-color: #64be69;
+}
+
+.signup .input {
+  padding: 0.6em 0.5em 0.5em 0.5em;
 }

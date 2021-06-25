@@ -58,14 +58,14 @@ if($listaRecensioni){
         $recensioni .= Utils::template($singleRecensione, $templateRecensione);
         $prevletter = $letter;
     }
-    $contentRecensioni .= Utils::template(array('recensioni' => $recensioni, 'letteraId' => $letter), $gruppoRecensioni);
+    $contentRecensioni .= Utils::template(array('recensioni' => $recensioni, 'letteraId' => strtoupper($letter)), $gruppoRecensioni);
 }else{
     $contentRecensioni = '<p id="feedback">Nessuna recensione presente nel sistema.</p>';
 }
 
 $aiutiLettere = '';
 foreach($lettere as $lettera => $value){
-    $aiutiLettere .= '<a class="hide-block" href="#'.$lettera.'">Salta alla lettera '.$lettera.'</a> ';
+    $aiutiLettere .= '<a class="hide-block" href="#'.$lettera.'">Salta alla lettera '.strtoupper($lettera).'</a> ';
 }
 
 $pageContent = Utils::template(array('aiutiLettere' => $aiutiLettere, 'aggiuntaRecensione' => $aggiuntaRecensione, 'listaRecensioni' => $contentRecensioni), $pageContent);

@@ -29,6 +29,9 @@ html{
 .linkaiuto{
   display: none;
 }
+.linktornasu{
+  display: none;
+}
 /*-------------------------------- CONTENUTO --------------------------------*/
 #content p{
   margin-top: 1em;
