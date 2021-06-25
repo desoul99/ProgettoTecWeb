@@ -68,6 +68,7 @@ html{
   flex-direction: row;
 	flex-wrap: nowrap;
 	margin-top: 0.5em;
+  break-inside: avoid;
 }
 
 #content .flex-container .flex-img {
