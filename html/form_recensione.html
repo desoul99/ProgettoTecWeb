@@ -21,11 +21,11 @@
             <input id="titolo_inglese" type="checkbox"{{titolo_inglese}} name="titolo_inglese" />
         </div>
         <div class="input">
-            <label for="autore_opera">Autore opera (obbligatorio):</label>
+            <label for="autore_opera">Autore opera (obbligatorio, cercare di specificare i nomi in altre lingue usando l'attributo xml:lang in un tag span):</label>
             <span><input id="autore_opera" type="text" value="{{autore_opera}}" name="autore_opera" /></span>
         </div>
         <div class="input">
-            <label for="testo">Testo recensione (obbligatorio):</label>
+            <label for="testo">Testo recensione (obbligatorio, cercare di specificare le parole in altre lingue usando l'attributo xml:lang in un tag span):</label>
             <span><textarea id="testo" name="testo" rows="4" cols="50">{{testo}}</textarea></span>
         </div>
         <div class="input">
@@ -39,7 +39,7 @@
         <div class="input input-file">
             <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
             {{old_immagine}}
-            <label for="immagine">Immagine:</label>
+            <label for="immagine">Immagine (Non caricare immagini già presenti):</label>
             <span><input id="immagine" type="file" name="immagine" /></span>
         </div>
         <div class="input">
