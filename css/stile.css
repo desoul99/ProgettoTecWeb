@@ -265,6 +265,10 @@ h2 {
 	background-image: url("../images/marco.jpg");
 }
 
+.img-stefano {
+	background-image: url("../images/Stefano.jpg");
+}
+
 .group-member {
   display: block;
   font-size: 1.5em;
@@ -640,7 +644,7 @@ dl.metadati dd {
   flex: 0 0 5em;
 }
 .recensione dl.metadati dd {
-  flex: 0 0 60
+  flex: 0 0 60%
 }
 
 .img-recensione {
