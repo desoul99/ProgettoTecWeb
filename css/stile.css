@@ -161,9 +161,7 @@ dd {
 	margin-top: 0.5em;
 }
 
-#content h1,
-h2 {
-	background-color: #f3efe8;
+#content h2 {
 	margin: 1em;
 }
 
@@ -524,8 +522,7 @@ input[type="password"] {
 }
 
 #content .recensioni .flex-container {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin: 0em;
 }
 
 #content .recensioni .flex-container p {
@@ -586,14 +583,26 @@ input[type="password"] {
   margin-right: 0em;
 }
 
+.recensioni li {
+  background-color: #f0e7d8;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  border: solid #d1ccc2;
+  border-width: 0.2em;
+}
+
+#content .recensioni h2 {
+  background-color: none;
+}
+
 @media only screen and (max-width: 480px) {
   #content .recensioni .flex-container {
     flex-wrap: wrap;
     flex-direction: column;
-    border-top: 1px groove #737373;
-    border-bottom: 1px groove #737373;
     margin-bottom: 1em;
     padding-top: 1em;
+    border-bottom: none;
   }
 
   #content .recensioni .flex-container .flex-img{
@@ -669,7 +678,7 @@ dl.metadati dd {
   width: 95%;
 }
 .recensione dl.metadati dt {
-  flex: 0 0 5em;
+  flex: 0 0 40%;
 }
 .recensione dl.metadati dd {
   flex: 0 0 60%
@@ -717,7 +726,6 @@ div.dati {
   .recensione dl.metadati dd {
     margin-left: auto;
   }
-}
   #content .recensione h2 {
     margin: 0em;
     padding-bottom: 0.5em;
@@ -729,6 +737,10 @@ div.dati {
     margin: 0em;
   }
 }
+
+
+
+
 
 /*DASHBOARD*/
 
