@@ -23,7 +23,7 @@ dt {
 }
 
 #header h1 {
-	color: #f3efe8;
+	color: white;
 	font-size: 3em;
 	padding: 0.25em;
 	font-style: italic;
@@ -123,21 +123,15 @@ dt {
   #nav_menu .pagCorrente a{
     margin: 0em;
   }
-
+  #navbar li {
+		width: 100%;
+	}
 }
 
 #navbar .pagCorrente a{
   color: #1f1f1f;
   font-size: 1em;
 }
-
-@media only screen and (max-width: 480px) {
-	#navbar li {
-		width: 100%;
-	}
-
-}
-
 
 /*-------------------------------- CONTENUTO --------------------------------*/
 
@@ -203,9 +197,6 @@ a.linkaiuto {
 		padding-right: 5%;
 	}
 }
-
-@media only screen and (max-width: 480px) {}
-
 
 /*--------------------------- CHI SIAMO ---------------------------------*/
 
@@ -467,11 +458,6 @@ input[type="password"] {
 	/*per farli andare a capo*/
   }
 
-  th {
-    background-color: #f3efe8;
-    color: #f3efe8;
-  }
-
   table,
   tbody,
   tr,
@@ -598,6 +584,14 @@ input[type="password"] {
   background-color: transparent;
 }
 
+.assistive-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 @media only screen and (max-width: 480px) {
   #content .recensioni .flex-container {
     flex-wrap: wrap;
@@ -622,13 +616,6 @@ input[type="password"] {
   }
 }
 
-.assistive-text {
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  top: -10px;
-}
 /*-------------------------------- RECENSIONE --------------------------------*/
 .erroriJS{
   color: red;
@@ -698,9 +685,6 @@ div.dati {
   .recensione dl.metadati dd {
     flex: 0 0 55%
   }
-}
-
-@media only screen and (max-width: 880px) {
   .recensione dl.metadati {
     flex-flow: column;
   }
