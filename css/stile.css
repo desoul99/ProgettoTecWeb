@@ -107,7 +107,7 @@ dt {
 
   .nav_link {
     text-decoration: none;
-    color: white;
+    color: #f3efe8;
     font-size: 1.5em;
     width: auto;
     display:block;
@@ -162,9 +162,14 @@ dt {
 }
 
 a.linktornasu {
+  display: block;
   text-decoration: none;
-  margin-top: 10em;
-  margin-bottom: 0.5em;
+  padding: 1em;
+  margin: 0.5em;
+  width: max-content;
+  color: #f3efe8;
+  background-color: #383232;
+  border-radius: 0.5em;
 }
 
 a.linkaiuto {
@@ -257,7 +262,7 @@ a.linkaiuto {
 }
 
 .img-samuele {
-	background-image: url(https://betterstudio.com/wp-content/uploads/2019/05/1-1-instagram-1024x1024.jpg);
+	background-image: url("../images/samuele.jpg");
 }
 
 .img-lorenzo {
@@ -464,7 +469,7 @@ input[type="password"] {
 
   th {
     background-color: #f3efe8;
-    color: white;
+    color: #f3efe8;
   }
 
   table,
@@ -579,7 +584,8 @@ input[type="password"] {
   margin-right: 0em;
 }
 
-.recensioni li {
+.recensioni li,
+#lista-contatti li {
   background-color: #f0e7d8;
   padding: 1em;
   margin: 1em;
@@ -589,7 +595,7 @@ input[type="password"] {
 }
 
 #content .recensioni h2 {
-  background-color: none;
+  background-color: transparent;
 }
 
 @media only screen and (max-width: 480px) {
@@ -843,4 +849,13 @@ div.dati {
 
 .form-recensione .input {
   padding: 0.6em 0.5em 0.5em 0.5em;
+}
+
+#lista-contatti {
+  padding: 0em;
+  list-style-type: none;
+}
+
+#lista-contatti .flex-txt {
+  padding: 0em;
 }
