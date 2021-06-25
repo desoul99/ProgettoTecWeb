@@ -651,7 +651,7 @@ dl.metadati {
   margin-right: 0em;
 }
 dl.metadati dt {
-  flex: 0 0 5em;
+  flex: 0 0 40%;
   text-align: left;
   overflow: hidden;
   font-size: 1.3em;
