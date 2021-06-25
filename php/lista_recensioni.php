@@ -50,7 +50,7 @@ if($listaRecensioni){
             $lettere[$letter][] = $singleRecensione;
         }else{
             if(count($lettere)){
-                $contentRecensioni .= Utils::template(array('recensioni' => $recensioni, 'letteraId' => $prevletter), $gruppoRecensioni);
+                $contentRecensioni .= Utils::template(array('recensioni' => $recensioni, 'letteraId' => strtoupper($prevletter)), $gruppoRecensioni);
                 $recensioni = '';
             }
             $lettere[$letter] = [$singleRecensione];
@@ -65,7 +65,7 @@ if($listaRecensioni){
 
 $aiutiLettere = '';
 foreach($lettere as $lettera => $value){
-    $aiutiLettere .= '<a class="hide-block" href="#'.$lettera.'">Salta alla lettera '.strtoupper($lettera).'</a> ';
+    $aiutiLettere .= '<a class="hide-block" href="#'.strtoupper($lettera).'">Salta alla lettera '.strtoupper($lettera).'</a> ';
 }
 
 $pageContent = Utils::template(array('aiutiLettere' => $aiutiLettere, 'aggiuntaRecensione' => $aggiuntaRecensione, 'listaRecensioni' => $contentRecensioni), $pageContent);
