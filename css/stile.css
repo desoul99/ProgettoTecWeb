@@ -274,6 +274,10 @@ a.linkaiuto {
 	background-image: url("../images/marco.jpg");
 }
 
+.img-stefano {
+	background-image: url("../images/Stefano.jpg");
+}
+
 .group-member {
   display: block;
   font-size: 1.5em;
@@ -647,7 +651,7 @@ dl.metadati {
   margin-right: 0em;
 }
 dl.metadati dt {
-  flex: 0 0 40%;
+  flex: 0 0 5em;
   text-align: left;
   overflow: hidden;
   font-size: 1.3em;
@@ -665,10 +669,10 @@ dl.metadati dd {
   width: 95%;
 }
 .recensione dl.metadati dt {
-  flex: 0 0 25%;
+  flex: 0 0 5em;
 }
 .recensione dl.metadati dd {
-  flex: 0 0 70%
+  flex: 0 0 60%
 }
 
 .img-recensione {
