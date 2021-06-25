@@ -782,3 +782,61 @@ div.dati {
 .signup .input {
   padding: 0.6em 0.5em 0.5em 0.5em;
 }
+
+.form-recensione {
+  margin-bottom: 1em;
+}
+
+.form-recensione fieldset {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin: auto;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.form-recensione legend {
+  margin: auto;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.form-recensione label {
+  text-align: center;
+  margin-left: 0.75em;
+}
+
+.form-recensione input[type="text"],
+.form-recensione textarea {
+  width: 100%;
+  padding: 0.75em;
+  border: 1px solid #383232;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-recensione input[type="checkbox"],
+.form-recensione select {
+  padding: 0.75em;
+  border: 1px solid #383232;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-recensione input[type="submit"] {
+  width: 100%;
+  background-color: #93b66b;
+  padding: 0.75em;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-recensione input[type="submit"]:hover {
+  background-color: #64be69;
+}
+
+.form-recensione .input {
+  padding: 0.6em 0.5em 0.5em 0.5em;
+}
