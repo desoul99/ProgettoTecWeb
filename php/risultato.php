@@ -38,5 +38,6 @@ $replacements = array(
     'bodyOptions' => ''
 );
 
-echo Utils::template($replacements, $template);
+$pageContent = Utils::template($replacements, $template);
+echo str_replace('<a class="linktornasu" href="#content">Torna su</a>', '', $pageContent);
 ?>
